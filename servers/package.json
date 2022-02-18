@@ -1,0 +1,14 @@
+{
+  "name": "servers",
+  "version": "1.0.0",
+  "description": "Servers side with express",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Parker",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
