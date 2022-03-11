@@ -16,9 +16,5 @@
   "bugs": {
     "url": "https://github.com/parkers12/otus_homework_project/issues"
   },
-  "homepage": "https://github.com/parkers12/otus_homework_project#readme",
-  "dependencies": {
-    "body-parser": "^1.19.2",
-    "mysql": "^2.18.1"
-  }
+  "homepage": "https://github.com/parkers12/otus_homework_project#readme"
 }
