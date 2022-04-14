@@ -4,13 +4,19 @@
   "description": "Servers side with express",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest --runInBand --detectOpenHandles"
   },
   "author": "Parker",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.13",
     "body-parser": "^1.19.2",
     "express": "^4.17.3",
     "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
   }
 }
