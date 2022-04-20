@@ -1,7 +1,7 @@
 import app from '../index.mjs';
-import supertest from "supertest";
 // const request = require("supertest");
-// const connection = require('../model/db');
+import connection from '../model/db.mjs';
+import supertest from "supertest";
 
 
 // const express = require('express');
@@ -21,10 +21,10 @@ describe("Testing routes", () => {
     it("Get static page", async () => {
         await api
         .get("/about")
-        .expect("content-type", /json/)
-        .expect(200)
-        .expect(function (res) {
-            console.log(res);
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        end(function(err, res) {
+            done();
         });
 
         // const response = await request(app)
