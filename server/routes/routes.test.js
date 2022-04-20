@@ -34,4 +34,8 @@ describe("Testing routes", () => {
         // expect(response.body["header"]).toEqual("О LUCKSHIMI");
         // expect(response.statusCode).toEqual(200);
     });
+
+    afterAll(() => {
+        connection.end();
+    })
 });
