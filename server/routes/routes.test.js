@@ -18,14 +18,12 @@ describe("Testing routes", () => {
         api = supertest(app);
     });
 
-    it("Get static page", async () => {
+    it("Get json for page", async () => {
         await api
         .get("/about")
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
-        end(function(err, res) {
-            done();
-        });
+        .expect(200);
 
         // const response = await request(app)
         //     .get("/about");
