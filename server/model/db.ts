@@ -1,8 +1,7 @@
 // 'use strict';
 import mysql from "mysql2";
-import dbConfig from "../config/db.config.mjs";
+import dbConfig from "../config/db.config";
 
-// // создаем соединение с нашей базой данных
 const connection = mysql.createConnection({
     host: dbConfig.HOST,
     user: dbConfig.USER,

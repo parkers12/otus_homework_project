@@ -1,4 +1,4 @@
-import connection from '../model/db.mjs';
+import connection from '../model/db';
 import { resolve } from 'path';
 
 export default function getPage(req, res) {

@@ -1,11 +1,11 @@
 import express from 'express';
 
-import getDelivery from '../controllers/getDelivery.mjs';
-import getActions from '../controllers/getActions.mjs';
-import getMap from '../controllers/getMap.mjs';
-import getFilter from '../controllers/getFilter.mjs'; 
-import getItem from '../controllers/getItem.mjs'; 
-import getPage from '../controllers/getPage.mjs';
+import getDelivery from '../controllers/getDelivery';
+import getActions from '../controllers/getActions';
+import getMap from '../controllers/getMap';
+import getFilter from '../controllers/getFilter'; 
+import getItem from '../controllers/getItem'; 
+import getPage from '../controllers/getPage';
 
 const router = express.Router();
 

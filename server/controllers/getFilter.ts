@@ -1,4 +1,4 @@
-import connection from '../model/db.mjs';
+import connection from '../model/db';
 
 export default function (req, res) {
     const filterPartId = Number(req.params.filter);

@@ -1,6 +1,6 @@
-import app from '../index.mjs';
+import app from '../index';
 // const request = require("supertest");
-import connection from '../model/db.mjs';
+import connection from '../model/db';
 import supertest from "supertest";
 
 
