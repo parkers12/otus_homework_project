@@ -1,46 +1,45 @@
 import connection from '../model/db';
 
 type TFilterListArr = {
-    "filterListId": number,
-    "filterListRus": string,
-    "filterListEng": string,
+    filterListId: number,
+    filterListRus: string,
+    filterListEng: string,
 }
 
 type TFilterItemArr = {
-    "itemId": number,
-    //"itemCatId": el["category"],
-    "itemCat": string,
-    "itemCatEng": string,
-    "itemArt": number,
-    "itemName": string,
-    "itemDesc": string,
-    "itemDescLong": string,
-    "itemClass": string,
-    "itemSort": string,
-    "itemColor": string,
-    "itemSize": string,
-    "itemForm": string,
-    "itemMetal": string,
-    "itemLenght": number,
-    "itemBride": number,
-    "itemNew": number,
-    "itemHit": number,
-    "itemGift": number,
+    itemId: number,
+    itemCat: string,
+    itemCatEng: string,
+    itemArt: number,
+    itemName: string,
+    itemDesc: string,
+    itemDescLong: string,
+    itemClass: string,
+    itemSort: string,
+    itemColor: string,
+    itemSize: string,
+    itemForm: string,
+    itemMetal: string,
+    itemLenght: number,
+    itemBride: number,
+    itemNew: number,
+    itemHit: number,
+    itemGift: number,
 }
 
 type TFilterCategory = {
-    "filterCategoryId": number,
-    "filterCategoryRus": string,
-    "filterCategoryEng": string,
+    filterCategoryId: number,
+    filterCategoryRus: string,
+    filterCategoryEng: string,
 }
 
 type TFilterGroup = {
-    "filterIdGroup": number,
-    "filterIdItem": number,
-    "filterName": string,
-    "filterPrice": number,
-    "filterNamerus": string,
-    "filterLink": string,
+    filterIdGroup: number,
+    filterIdItem: number,
+    filterName: string,
+    filterPrice: number,
+    filterNamerus: string,
+    filterLink: string,
 }
 
 type TFilterGrCat = {
