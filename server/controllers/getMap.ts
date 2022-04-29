@@ -1,9 +1,15 @@
 import connection from '../model/db';
 
-export default function geyMap(req, res) {
+type TParentElem = {
+    "namerus": string,
+    "nameeng": string,
+    "children": any
+}
+
+export default function geyMap(req: any, res: any) {
     connection.query(
         'SELECT `id`, `namerus`, `nameeng`, `blok`, `order`, `head` FROM `lu__menu` WHERE `blok` = 1 OR `blok` = 5 OR `blok` = 6; SELECT `id`, `categoryrus`, `categoryeng` FROM `lu__category` WHERE `activ` = 1; SELECT b.`id`, b.`name`, a.`categoryeng`, b.`category`, b.`activ`, b.`bride` FROM `lu__category` a, `lu__catalog` b WHERE a.`id` = b.`category`;',
-        function (err, result) {
+        function (err, result: [][]) {
             let mapSite;
             if (err) {
                 throw err;
@@ -11,7 +17,7 @@ export default function geyMap(req, res) {
                 const arrayMenu = [...result[0]];
                 const arrayCategory = [...result[1]];
                 const arrayCatalog = [...result[2]];
-                const tree = [];
+                const tree: TParentElem[] = [];
 
                 arrayMenu.forEach((el, j, arrayMenu) => {
                     if (el["head"] === 0) {
@@ -101,6 +107,7 @@ export default function geyMap(req, res) {
                             "nameeng": el["nameeng"],
                             "children": childrenArray
                         }
+
                         tree.push(parentElem);
                     }
                 });

@@ -9,8 +9,8 @@ import getPage from '../controllers/getPage';
 
 const router = express.Router();
 
-router.get("/delivery", getDelivery);
 router.get("/actions", getActions);
+router.get("/delivery", getDelivery);
 router.get("/map", getMap);
 router.get("/filter/:filter/:idFil/:idCat?/:page?", getFilter);
 router.get("/:category/1/:idItem/", getItem);

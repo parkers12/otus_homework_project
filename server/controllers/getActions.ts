@@ -1,6 +1,6 @@
 import connection from '../model/db';
 
-export default function getActions(req, res) {
+function getActions(req: any, res: any) {
     connection.query(
         'SELECT `id`, `link`, `title`, `text`, `picture` FROM `lu__actions` WHERE `activ` = 1;',
         function (err, result) {
@@ -12,3 +12,5 @@ export default function getActions(req, res) {
     );
     // connection.end();
 }
+
+export default getActions;
