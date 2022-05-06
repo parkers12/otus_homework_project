@@ -10,7 +10,7 @@
     "prepare": "husky install",
     "build": "webpack --node-env development",
     "dev": "webpack serve",
-    "start": "webpack --node-env development node ./src/index.js",
+    "start": "webpack --node-env development ./src/index.js",
     "clear_jest": "jest --clearCache"
   },
   "repository": {
@@ -28,6 +28,8 @@
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^26.0.24",
     "autoprefixer": "^10.3.7",
     "babel-jest": "^27.3.1",
@@ -49,6 +51,7 @@
     "jest": "^27.3.1",
     "lint-staged": "^11.2.6",
     "mini-css-extract-plugin": "^2.4.2",
+    "node-sass": "^7.0.1",
     "postcss": "^8.3.9",
     "postcss-loader": "^6.2.0",
     "postcss-preset-env": "^6.7.0",
@@ -69,7 +72,7 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --fix",
+    "*.js, .tsx": "eslint --fix",
     "*.{js,css,scss,md,json,html}": "prettier --write"
   },
   "browserslist": [
@@ -78,10 +81,9 @@
     "not dead"
   ],
   "dependencies": {
+    "classnames": "^2.2.6",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "classnames": "^2.2.6",
-    "node-sass": "^4.14.1",
     "react-router-dom": "^5.2.0"
   },
   "stats": {

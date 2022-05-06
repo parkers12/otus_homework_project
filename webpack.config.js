@@ -28,8 +28,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "src/img", to: "img" },
-        { from: "src/fonts", to: "fonts" },
+        { from: "src/assets/img", to: "img" },
+        { from: "src//assets/fonts", to: "fonts" },
       ],
     }),
     new CleanWebpackPlugin(),

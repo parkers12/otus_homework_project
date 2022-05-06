@@ -3,6 +3,7 @@ module.exports = (api) => ({
       [
         "@babel/preset-env",
         '@babel/preset-react',
+        "@babel/preset-typescript",
         {
           targets: api.caller((caller) => caller && caller.target === "node")
             ? { node: "current" }
