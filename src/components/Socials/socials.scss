@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+
+.socials-list {
+    display: flex;
+    align-items: center;
+
+    a {
+        outline: none;
+        text-decoration: none;
+        width: $size-icon-normal;
+        height: $size-icon-normal;
+
+        &:hover {
+            color: $black;
+        }
+    }
+
+    a + a {
+        margin-left: $sp;
+    }
+
+    &.big {
+        a {
+            width: $size-icon-big;
+            height: $size-icon-big;
+        }
+
+        a + a {
+            margin-left: $sp * 1.5;
+        }
+    }
+}
+
+@media (min-width: $ipad) {
+
+}
+
+@media (min-width: $desctop) {
+	.socials-list {
+        a {
+            width: $size-icon-big;
+            height: $size-icon-big;
+        }
+
+        a + a {
+            margin-left: $sp * 1.5;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+
+.footer {
+    &__category {
+        padding: $sp * 5 $sp * 2;
+        display: flex;
+        flex-direction: column;
+
+        &-col {
+
+            & + & {
+                margin-top: $sp * 5;
+            }
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+
+                &-item {
+                    font-weight: $font-weight-light;
+                    font-size: $middle-size;
+                    letter-spacing: $letter-spacing-big;
+                    line-height: $line-height-normal;
+                    color: $grey;
+                    margin-bottom: $sp * 1.5;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $ipad) {
+    .footer {
+        &__category {
+            padding: $sp * 4 $sp * 2;
+
+            &-col {
+                &-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: initial;
+
+                    &-item {
+                        width: 50%;
+
+                        &:nth-child(odd) {
+                            padding-right: $sp * 2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $desctop) {
+    .footer {
+        &__category {
+            flex-direction: row;
+            width: $width-site;
+            margin: 0 auto;
+
+            &-col {
+                width: 50%;
+                
+                & + & {
+                    margin-top: 0;
+                }
+
+                &-list {
+                    &-item {
+                        padding-right: $sp * 2;
+                    }
+                }
+            }
+        }
+    }
+}

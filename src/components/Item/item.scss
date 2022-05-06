@@ -1,0 +1,87 @@
+@import '../../styles/variables';
+
+.item {
+  margin-top: $sp;
+  flex: 1;
+
+  &__photo {
+    width: 100%;
+    //background-image: url("#{$files}/recources/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: $sp * 2;
+
+    &-article {
+      font-weight: $font-weight-light;
+      font-size: $middle-size;
+      line-height: $line-height-normal;
+      letter-spacing: $letter-spacing-big;
+      color: $grey;
+      margin-bottom: $sp;
+    }
+
+    &-desc {
+      font-weight: $font-weight-bold;
+      font-size: $middle-size;
+      line-height: $line-height-normal;
+      letter-spacing: $letter-spacing-big;
+      color: $grey;
+      margin-bottom: $sp * 3;
+      text-align: center;
+    }
+
+    &-price {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-size: $middle-size;
+      line-height: $line-height-normal;
+      letter-spacing: $letter-spacing-big;
+
+      &-top {
+        display: flex;
+        align-items: center;
+      }
+      &-old {
+        font-weight: $font-weight-light;
+        color: lighten($grey, 50%);
+        text-decoration: line-through;
+      }
+      &-sale {
+        margin-left: $sp * 1.5;
+        font-weight: $font-weight-light;
+        color: $coral;
+      }
+      &-new {
+        font-weight: $font-weight-bold;
+        color: $coral;
+        margin-top: $sp;
+      }
+    }
+  }
+}
+
+@media (min-width: $ipad) {
+  .item {
+    & + & {
+      margin-left: $sp * 3.5;
+    }
+  }
+}
+
+@media (min-width: $desctop) {
+  .item {
+    font-size: $big-size;
+
+    & + & {
+      margin-left: $sp * 4;
+    }
+  }
+}

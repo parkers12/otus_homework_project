@@ -1,0 +1,72 @@
+@import '../../styles/variables';
+
+
+.about {
+    width: 100%;
+    padding: $sp * 4 $sp * 2 $sp * 5;
+
+    &__text {
+        p, ul {
+            margin-bottom: $sp * 2;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        p, li {
+            color: $grey;
+            font-weight: $font-weight-light;
+            font-size: $middle-size;
+            line-height: $line-height-normal;
+            letter-spacing: $letter-spacing-big;
+        }
+
+        p.desctop {
+            display: none;
+        }
+
+        li {
+            margin-left: $sp * 1.5;
+            position: relative;
+            
+            &::before {
+                content: "";
+                position: absolute;
+                top: 12px;
+                left: -$sp * 1.5;
+                width: 4px;
+                height: 1px;
+                border-bottom: 1px solid $grey;
+            }
+        }
+    }
+}
+
+@media (min-width: $ipad) {
+    .about {
+        padding: $sp * 4 $sp * 3;
+    }
+}
+
+@media (min-width: $desctop) {
+    .about {
+        width: $width-site;
+        margin: 0 auto;
+        padding: $sp * 4 $sp * 2;
+
+        &__text {
+            p.desctop {
+                display: block;
+            }
+
+            p, li {
+                font-size: $main-size;
+            }
+
+            p, ul {
+                margin-bottom: $sp * 4;
+            }
+        }
+    }
+}

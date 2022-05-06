@@ -1,0 +1,112 @@
+@import '../../styles/variables';
+
+.map {
+    width: 100%;
+    //height: 700px;
+    background-color: darken($white, 1%);
+    display: flex;
+    flex-direction: column;
+
+    &__contacts {
+        width: 100%;
+        padding: $sp * 4 $sp * 2 $sp * 5;
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+
+            &-item {
+                font-size: $middle-size;
+                letter-spacing: $letter-spacing-big;
+                color: $grey;
+                padding-left: $sp * 3.5;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 3px;
+                    left: 0;
+                    width: $size-icon-normal;
+                    height: $size-icon-normal;
+                    background-repeat: no-repeat;
+                }
+
+                & + & {
+                    margin-top: $sp * 2;
+                }
+
+                &_phone {
+                    &::before {
+                        background-image: url('#{$files}/icons/phone.svg');
+                    }
+                }
+
+                &_marker {
+                    &::before {
+                        background-image: url('#{$files}/icons/marker.svg');
+                    }
+                }
+
+                &_letter {
+                    &::before {
+                        background-image: url('#{$files}/icons/letter.svg');
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $ipad) {
+    .map {
+        height: 450px;
+        position: relative;
+
+        &__wrapper {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        &__contacts {
+            position: absolute;
+            top: $sp + 2px;
+            right: $sp + 2px;
+            width: 275px;
+            background-color: $white;
+            padding: $sp * 4 $sp * 3;
+            box-shadow: rgba(0, 0, 0, 0.3) 0 1px 4px -1px;
+            border-radius: $border-radius / 2;
+
+            &-list {
+                &-item {
+                    font-size: $small-size;
+                    line-height: $size-icon-normal; //высота строки не меньше иконки
+
+                    &::before {
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $desctop) {
+    .map {
+        height: 450px;
+
+        &__wrapper {
+            width: $width-site;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &__contacts {
+
+        }
+    }
+}

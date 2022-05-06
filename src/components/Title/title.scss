@@ -1,0 +1,75 @@
+@import '../../styles/variables';
+
+.title {
+  font-weight: $font-weight-bold;
+  font-size: $big-size;
+  color: $coral;
+  letter-spacing: $letter-spacing-big;
+  text-transform: uppercase;
+
+  &_about {
+    margin-bottom: $sp * 1.5;
+  }
+
+  &_map,
+  &_footer {
+    margin-bottom: $sp * 2;
+  }
+
+  &_news {
+    margin-bottom: $sp * 3;
+  }
+
+  &_feedback {
+    span {
+      display: none;
+    }
+  }
+
+  &_main {
+    font-size: $main-size + 8px;
+    margin-bottom: $sp;
+  }
+
+  &_second {
+    font-size: $main-size;
+    margin-bottom: $sp * 1.5;
+  }
+
+  &_sales {}
+
+  &_modal {}
+}
+
+@media (min-width: $ipad) {
+  .title {
+    &_about {
+      font-size: $main-size;
+      margin-bottom: $sp * 2;
+    }
+
+    &_news {
+      font-size: $main-size + 10px;
+      margin-bottom: $sp * 3;
+    }
+  }
+}
+
+@media (min-width: $desctop) {
+  .title {
+    &_about {
+      font-size: $main-size + 8px;
+      margin-bottom: $sp * 4;
+    }
+
+    &_sales,
+    &_feedback {
+      font-size: $main-size + 8px;
+    }
+
+    &_news {
+      font-size: $main-size + 16px;
+      margin-bottom: $sp * 6;
+    }
+  }
+}

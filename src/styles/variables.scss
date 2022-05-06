@@ -1,0 +1,54 @@
+// File with variables
+// use kebab-case
+
+//Indentation multiplier
+$sp: 8px;
+
+//Font-size
+$main-size: 16px;
+$big-size: $main-size + 2px; //18px
+$middle-size: $main-size - 2px; //14px
+$small-size: $main-size - 4px; //12px
+$little-size: $main-size - 6px; //10px
+
+//Font-family
+$default-font: 'Comfortaa', sans-serif;
+
+//Font-weight
+$font-weight-light: 300;
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+
+//Line-heught
+$line-height-normal: 152%;
+
+//Letter-spacing
+$letter-spacing-normal: 0.05em;
+$letter-spacing-big: 0.1em;
+
+//Border-radius
+$border-radius: 4px;
+
+//Colors
+$coral: #FF7F50;
+$grey: #444444;
+$black: #000000;
+$white: #ffffff;
+$news: #f8f8fa;
+
+//Scroll size
+$scroll-size: 14px;
+
+//Size-icon
+$size-icon-normal: 18px;
+$size-icon-big: $size-icon-normal + 6px;  //24px
+
+//Files
+$files: "../../assets";
+
+//Media
+$desctop: 1200px;
+$ipad: 768px;
+
+//Width site
+$width-site: 1200px;

@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.copyright {
+    padding: $sp * 3 $sp * 2;
+    border-top: 1px solid lighten($grey, 67%);
+    color: $grey;
+    font-weight: $font-weight-light;
+    font-size: $middle-size;
+    letter-spacing: $letter-spacing-big;
+}
+
+@media (min-width: $ipad) {
+  .copyright {
+      padding: $sp * 4 $sp * 2;
+      text-align: center;
+  }
+}
+
+@media (min-width: $desctop) {
+  .copyright {}
+}

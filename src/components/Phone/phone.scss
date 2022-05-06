@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+
+.phone {
+  display: flex;
+  flex-direction: column;
+  font-weight: $font-weight-light;
+  font-size: $middle-size;
+  line-height: $line-height-normal;
+  letter-spacing: $letter-spacing-normal;
+  color: $grey;
+
+  .button_call {
+    text-align: left;
+    color: $coral;
+    font-size: $little-size;
+    font-weight: $font-weight-light;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+@media (min-width: $ipad) {
+  .phone {
+    .button_call {
+      text-align: right;
+      display: block;
+      line-height: $line-height-normal;
+    }
+  }
+}
+
+@media (min-width: $desctop) {
+  .phone {
+    line-height: $line-height-normal;
+    font-size: $big-size;
+
+    .button_call {
+      font-size: $small-size;
+      line-height: $line-height-normal;
+      cursor: pointer;
+
+      &:hover {
+        color: darken($coral, 10%);
+      }
+    }
+  }
+}

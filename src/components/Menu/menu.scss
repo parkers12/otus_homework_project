@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+
+.menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__item {
+        a {
+            font-size: $small-size;
+            line-height: $line-height-normal;
+            letter-spacing: $letter-spacing-big;
+            color: $grey;
+            text-decoration: none;
+            outline: none;
+            transition: color 0.2s;
+
+            &.active {
+                color: $coral;
+            }
+        }
+    }
+}
+
+@media (min-width: $ipad) {
+    .menu-list {
+        &__item {
+            a {
+                font-size: $middle-size;
+            }
+        }
+    }
+}
+
+@media (min-width: $desctop) {
+	.menu-list {
+        &__item {
+            a {
+                font-size: $big-size;
+                cursor: pointer;
+
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+    }
+}
