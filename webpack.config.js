@@ -14,7 +14,7 @@ module.exports = {
     environment: {
       arrowFunction: false,
     },
-    assetModuleFilename: "fonts/Roboto/[name][ext]",
+    assetModuleFilename: "fonts/futura/[name][ext]",
   },
   mode: process.env.NODE_ENV === "development" ? "development" : "production",
   performance: {
@@ -29,7 +29,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "src/assets/img", to: "img" },
-        { from: "src//assets/fonts", to: "fonts" },
+        { from: "src/assets/fonts", to: "fonts" },
       ],
     }),
     new CleanWebpackPlugin(),
@@ -41,9 +41,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-          },
         },
       },
       {
@@ -86,7 +83,7 @@ module.exports = {
       },
       {
         test: /\.(eot|ttf|woff)$/,
-        type: "asset/resource",
+        type: "asset/fonts",
       },
     ],
   },
