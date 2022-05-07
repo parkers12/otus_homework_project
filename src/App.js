@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
 import './app.scss';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import MainPage from "./pages/MainPage";
-import ContactsPage from "./pages/ContactsPage";
-import Modal from "./components/Modal";
-import MenuMobile from "./components/MenuMobile";
+import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
+import MainPage from "src/pages/MainPage";
+import ContactsPage from "src/pages/ContactsPage";
+import Modal from "src/components/Modal";
+import MenuMobile from "src/components/MenuMobile";
 
 function App() {
     const [btn, setbtn] = useState(false);
