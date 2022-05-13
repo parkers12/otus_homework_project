@@ -9,8 +9,7 @@
     "lint:fix": "eslint . --fix && prettier --write .",
     "prepare": "husky install",
     "build": "webpack --node-env development",
-    "dev": "webpack serve",
-    "start": "webpack --node-env development ./src/index.js",
+    "dev": "webpack serve --node-env development",
     "clear_jest": "jest --clearCache"
   },
   "repository": {
