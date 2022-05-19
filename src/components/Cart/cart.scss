@@ -1,42 +1,42 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .cart {
-    position: relative;
+  position: relative;
 
-    &__counter {
-        position: absolute;
-        top: -2px;
-        right: -4px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: $white;
-        background-color: $coral;
-        border-radius: 50%;
-        width: $size-icon-normal - 8px;
-        height: $size-icon-normal - 8px;
-        font-size: $little-size - 2;
-        line-height: $line-height-normal;
-    }
+  &__counter {
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    background-color: $coral;
+    border-radius: 50%;
+    width: $size-icon-normal - 8px;
+    height: $size-icon-normal - 8px;
+    font-size: $little-size - 2;
+    line-height: $line-height-normal;
+  }
 }
 
 @media (min-width: $ipad) {
-    .cart {
-        &__counter {
-            top: -3px;
-            right: -6px;
-            width: $size-icon-normal - 6px;
-            height: $size-icon-normal - 6px;
-            font-size: $little-size;
-        }
+  .cart {
+    &__counter {
+      top: -3px;
+      right: -6px;
+      width: $size-icon-normal - 6px;
+      height: $size-icon-normal - 6px;
+      font-size: $little-size;
     }
+  }
 }
 
 @media (min-width: $desctop) {
-    .cart {
-        &__counter {
-            width: $size-icon-normal - 4px;
-            height: $size-icon-normal - 4px;
-        }
+  .cart {
+    &__counter {
+      width: $size-icon-normal - 4px;
+      height: $size-icon-normal - 4px;
     }
+  }
 }

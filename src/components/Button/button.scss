@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .button {
   border-radius: $border-radius;
@@ -41,6 +41,6 @@
 
   @media (min-width: 768px) {
     font-size: $main-size;
-    padding: $sp*1.5  $sp*5;
+    padding: $sp * 1.5 $sp * 5;
   }
 }

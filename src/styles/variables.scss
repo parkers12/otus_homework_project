@@ -12,7 +12,7 @@ $small-size: $main-size - 4px; //12px
 $little-size: $main-size - 6px; //10px
 
 //Font-family
-$default-font: 'Comfortaa', sans-serif;
+$default-font: "Comfortaa", sans-serif;
 
 //Font-weight
 $font-weight-light: 300;
@@ -30,7 +30,7 @@ $letter-spacing-big: 0.1em;
 $border-radius: 4px;
 
 //Colors
-$coral: #FF7F50;
+$coral: #ff7f50;
 $grey: #444444;
 $black: #000000;
 $white: #ffffff;
@@ -41,7 +41,7 @@ $scroll-size: 14px;
 
 //Size-icon
 $size-icon-normal: 18px;
-$size-icon-big: $size-icon-normal + 6px;  //24px
+$size-icon-big: $size-icon-normal + 6px; //24px
 
 //Files
 $files: "../../assets";

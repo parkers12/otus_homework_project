@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import React, { useState } from 'react';
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import "./app.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -8,12 +8,12 @@ import ContactsPage from "./pages/ContactsPage";
 import Modal from "./components/Modal";
 import MenuMobile from "./components/MenuMobile";
 
-function App() {
+export default function App() {
     const [btn, setbtn] = useState(false);
 
     const onOpenCall = () => {
         setbtn(true);
-        //console.log(props);
+        // console.log(props);
     };
 
     const onCloseCall = () => {
@@ -24,7 +24,7 @@ function App() {
 
     const onOpenMenuMobile = () => {
       setmenumb(true);
-      //console.log(menumb);
+      // console.log(menumb);
     };
 
     const onCloseMenuMobile = () => {
@@ -34,9 +34,14 @@ function App() {
     return (
         <BrowserRouter>
             <div className="content">
-                <Header onOpenCall={onOpenCall} onOpenMenuMobile={onOpenMenuMobile} />
-                <Route path='/mainPage' component={MainPage} />
-                <Route path='/contactsPage' component={ContactsPage} />
+                <Header
+                    onOpenCall={onOpenCall}
+                    onOpenMenuMobile={onOpenMenuMobile}
+                />
+                <Routes>
+                    <Route path='/mainPage' component={MainPage} />
+                    <Route path='/contactsPage' component={ContactsPage} />
+                </Routes>
             </div>
 
             <Footer/>
@@ -51,5 +56,3 @@ function App() {
         </BrowserRouter>
     );
 }
-
-export default App;

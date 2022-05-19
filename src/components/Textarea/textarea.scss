@@ -1,35 +1,35 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .textarea-group {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+
+  &__label {
+    display: inline-block;
+    margin-bottom: $sp / 2;
+    font-size: $middle-size;
+    color: $grey;
+    line-height: $line-height-normal;
+    letter-spacing: $letter-spacing-big;
+  }
+
+  &__field {
+    display: block;
     width: 100%;
-
-    &__label {
-        display: inline-block;
-        margin-bottom: $sp / 2;
-        font-size: $middle-size;
-        color: $grey;
-        line-height: $line-height-normal;
-        letter-spacing: $letter-spacing-big;
-    }
-
-    &__field {
-        display: block;
-        width: 100%;
-        padding: $sp $sp * 1.5;
-        font-size: $small-size;
-        line-height: $line-height-normal;
-        letter-spacing: $letter-spacing-big;
-        color: $grey;
-        background-color: $white;
-        background-clip: padding-box;
-        border: 1px solid darken($white, 15%);
-        border-radius: $border-radius;
-        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        resize: none;
-        outline: none;
-    }
+    padding: $sp $sp * 1.5;
+    font-size: $small-size;
+    line-height: $line-height-normal;
+    letter-spacing: $letter-spacing-big;
+    color: $grey;
+    background-color: $white;
+    background-clip: padding-box;
+    border: 1px solid darken($white, 15%);
+    border-radius: $border-radius;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    resize: none;
+    outline: none;
+  }
 }

@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .modal {
   width: 100%;
@@ -67,32 +67,30 @@
 }
 
 @media (min-width: $ipad) {
-    .modal {
+  .modal {
+    &__container {
+      top: 50%;
+      left: 50%;
+      min-height: initial;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background-color: $white;
+    }
 
-      &__container {
-        top: 50%;
-        left: 50%;
-        min-height: initial;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        background-color: $white;
-      }
+    &__body {
+      min-height: calc(100% - 136px);
+      padding: $sp * 2;
+    }
 
-      &__body {
-        min-height: calc(100% - 136px);
-        padding: $sp * 2;
-      }
-
-      &_small {
-        .modal__container {
-          width: 500px;
-        }
+    &_small {
+      .modal__container {
+        width: 500px;
       }
     }
+  }
 }
 
 @media (min-width: $desctop) {
-	.modal {
-
-    }
+  .modal {
+  }
 }

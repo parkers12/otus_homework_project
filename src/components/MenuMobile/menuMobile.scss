@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .menu-mobile {
   width: 100%;
@@ -13,7 +13,6 @@
   &__body,
   &__footer {
     padding: $sp * 2;
-
   }
 
   &__header {

@@ -1,6 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
@@ -8,13 +9,13 @@ module.exports = {
     main: "./src/index.js",
   },
   output: {
-    filename: "js/bundle.js",
+    filename: "./js/bundle.js",
     path: path.resolve(__dirname, "build"),
     clean: true,
     environment: {
       arrowFunction: false,
     },
-    assetModuleFilename: "fonts/futura/[name][ext]",
+    // assetModuleFilename: "fonts/futura/[name][ext]",
   },
   mode: process.env.NODE_ENV === "development" ? "development" : "production",
   performance: {
@@ -23,15 +24,21 @@ module.exports = {
     maxAssetSize: 512000,
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "public", "index.html"),
+    }),
     new MiniCssExtractPlugin({
-      filename: "styles/styles.css",
+      filename: "./styles/styles.css",
     }),
     new CopyPlugin({
       patterns: [
-        { from: "src/assets/fonts", to: "fonts" },
+        { from: "src/assets/icons", to: "icons" },
+        { from: "src/assets/fonts", to: "fonts" }
       ],
     }),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [path.join(__dirname, "build/**/*")],
+    }),
   ],
   module: {
     rules: [
@@ -77,7 +84,23 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg|jpg|jpeg|gif|ico)$/i,
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/i,
+        use: ['@svgr/webpack', 'file-loader']
+      },
+      {
+        test: /\.(jpg|jpeg|gif|ico)$/i,
         type: "asset/resource",
       },
       {
@@ -87,7 +110,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", "tsx"],
+    extensions: [".js", ".jsx"],
   },
   devServer: {
     compress: true,

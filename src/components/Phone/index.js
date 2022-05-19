@@ -1,3 +1,3 @@
-import Phone from './Phone';
+import Phone from "./Phone.jsx";
 
 export default Phone;

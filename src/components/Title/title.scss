@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .title {
   font-weight: $font-weight-bold;
@@ -36,9 +36,11 @@
     margin-bottom: $sp * 1.5;
   }
 
-  &_sales {}
+  &_sales {
+  }
 
-  &_modal {}
+  &_modal {
+  }
 }
 
 @media (min-width: $ipad) {

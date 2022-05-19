@@ -1,11 +1,11 @@
-import express from 'express';
+import express from "express";
 
-import getDelivery from '../controllers/getDelivery';
-import getActions from '../controllers/getActions';
-import getMap from '../controllers/getMap';
-import getFilter from '../controllers/getFilter'; 
-import getItem from '../controllers/getItem'; 
-import getPage from '../controllers/getPage';
+import getDelivery from "../controllers/getDelivery";
+import getActions from "../controllers/getActions";
+import getMap from "../controllers/getMap";
+import getFilter from "../controllers/getFilter";
+import getItem from "../controllers/getItem";
+import getPage from "../controllers/getPage";
 
 const router = express.Router();
 

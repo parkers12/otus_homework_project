@@ -1,3 +1,3 @@
-import Feedback from './Feedback';
+import Feedback from "./Feedback.jsx";
 
 export default Feedback;

@@ -1,3 +1,3 @@
-import Menu from './Menu';
+import Menu from "./Menu.jsx";
 
 export default Menu;

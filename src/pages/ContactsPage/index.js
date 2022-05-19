@@ -1,3 +1,3 @@
-import ContactsPage from './ContactsPage';
+import ContactsPage from "./ContactsPage.jsx";
 
 export default ContactsPage;
