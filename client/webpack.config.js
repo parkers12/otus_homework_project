@@ -116,5 +116,12 @@ module.exports = {
     compress: true,
     port: 9000,
     hot: true,
+    historyApiFallback: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:9000',
+        pathRewrite: { '^/api': '' }
+      },
+    }
   },
 };

@@ -1,8 +1,8 @@
 import connection from "../model/db";
 
-function getActions(req: any, res: any) {
+function getData(req: any, res: any) {
   connection.query(
-    "SELECT `id`, `link`, `title`, `text`, `picture` FROM `lu__actions` WHERE `activ` = 1;",
+    "SELECT `id`, `namerus`, `nameeng`, `namecss`, `link` FROM `lu__social` WHERE `activ` = 1 ORDER BY `order`;",
     function (err, result) {
       if (err) {
           throw err;
@@ -13,4 +13,4 @@ function getActions(req: any, res: any) {
   // connection.end();
 }
 
-export default getActions;
+export default getData;

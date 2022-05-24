@@ -1,24 +1,51 @@
 import connection from "../model/db";
 
 type TItem = {
-  itemId: number;
-  itemName: string;
-  itemCat: string;
-  itemCatEng: string;
-  itemArt: number;
-  itemDesc: string;
-  itemDescLong: string;
-  itemPrice: number;
-  itemClass: string;
-  itemColor: string;
-  itemForm: string;
-  itemMetal: string;
-  itemSort: string;
-  itemSize: string;
-  itemActive: number;
-  itemNew: number;
-  itemHit: number;
-  itemGift: number;
+  id: number;
+  name: string;
+  categoryrus: string;
+  categoryeng: string;
+  article: number;
+  desc_short: string;
+  desc_long: string;
+  price: number;
+  classrus: string;
+  colorrus: string;
+  formrus: string;
+  metalrus: string;
+  sortrus: string;
+  size_start: number | string;
+  size_finish: number | string;
+  activ: number;
+  new: number;
+  hit: number;
+  gift: number;
+};
+
+// type TItem = {
+//   itemId: number;
+//   itemName: string;
+//   itemCat: string;
+//   itemCatEng: string;
+//   itemArt: number;
+//   itemDesc: string;
+//   itemDescLong: string;
+//   itemPrice: number;
+//   itemClass: string;
+//   itemColor: string;
+//   itemForm: string;
+//   itemMetal: string;
+//   itemSort: string;
+//   itemSize: string;
+//   itemActive: number;
+//   itemNew: number;
+//   itemHit: number;
+//   itemGift: number;
+// };
+
+type TSize = {
+  id: number;
+  data: string;
 };
 
 export default function getCategory(req: any, res: any) {
@@ -27,24 +54,13 @@ export default function getCategory(req: any, res: any) {
       req.params.idItem +
       ";" +
       "SELECT `id`, `data` FROM `lu__pearl_size_library`",
-    function (err, result: [][]) {
-      // if (err) {
-      //     throw err;
-      // }
-      //const item = [...result[0]];
-      // console.log(result[0][0], "!");
-      // let itemData: TItem;
-
-
+    function (err, result: [TItem[], TSize[]]) {
+      if (err) {
+          throw err;
+      }
       const itemData = result[0][0];
+      const sizes = result[1];
 
-
-      //console.log(result[0], "3");
-      //console.log(itemData.size_start, "1");
-      //console.log(itemData.size_finish, "2");
-      const sizes = [...result[1]];
-
-      //console.log(itemData[0], "!");
       const index_start = sizes.find(
         (item) => item["id"] === itemData.size_start
       );
@@ -52,36 +68,39 @@ export default function getCategory(req: any, res: any) {
         (item) => item["id"] === itemData.size_finish
       );
 
-      let size: string = "";
-      // console.log(index_start, "1");
-      // console.log(index_finish, "2");
+      let size_st: string = "";
+      let size_fn: string = "";
+
       if (index_start !== undefined && index_finish === undefined) {
-        size = index_start["data"];
+        size_st = index_start["data"];
       } else if (index_start !== undefined && index_finish !== undefined) {
-        size = `${index_start["data"]}-${index_finish["data"]}`;
+        // size = `${index_start["data"]}-${index_finish["data"]}`;
+        size_st = index_start["data"];
+        size_fn = index_finish["data"];
       }
 
-      // const item: TItem = {
-      //   itemId: itemData["id"],
-      //   itemName: itemData.name,
-      //   itemCat: itemData.categoryrus,
-      //   itemCatEng: itemData.categoryeng,
-      //   itemArt: itemData.article,
-      //   itemDesc: itemData.desc_short,
-      //   itemDescLong: itemData.desc_long,
-      //   itemPrice: itemData.price,
-      //   itemClass: itemData.classrus,
-      //   itemColor: itemData.colorrus,
-      //   itemForm: itemData.formrus,
-      //   itemMetal: itemData.metalrus,
-      //   itemSort: itemData.sortrus,
-      //   itemSize: size,
-      //   itemActive: itemData.activ,
-      //   itemNew: itemData.new,
-      //   itemHit: itemData.hit,
-      //   itemGift: itemData.gift,
-      // };
-      // res.json(item);
+      const item: TItem = {
+        id: itemData.id,
+        name: itemData.name,
+        categoryrus: itemData.categoryrus,
+        categoryeng: itemData.categoryeng,
+        article: itemData.article,
+        desc_short: itemData.desc_short,
+        desc_long: itemData.desc_long,
+        price: itemData.price,
+        classrus: itemData.classrus,
+        colorrus: itemData.colorrus,
+        formrus: itemData.formrus,
+        metalrus: itemData.metalrus,
+        sortrus: itemData.sortrus,
+        size_start: size_st,
+        size_finish: size_fn,
+        activ: itemData.activ,
+        new: itemData.new,
+        hit: itemData.hit,
+        gift: itemData.gift,
+      };
+      res.json(item);
     }
   );
   // connection.end();

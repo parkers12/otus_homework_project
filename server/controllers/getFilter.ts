@@ -1,45 +1,47 @@
 import connection from "../model/db";
 
 type TFilterListArr = {
-  filterListId: number;
-  filterListRus: string;
-  filterListEng: string;
+  id: number;
+  table: string;
+  filter: string;
 };
 
 type TFilterItemArr = {
-  itemId: number;
-  itemCat: string;
-  itemCatEng: string;
-  itemArt: number;
-  itemName: string;
-  itemDesc: string;
-  itemDescLong: string;
-  itemClass: string;
-  itemSort: string;
-  itemColor: string;
-  itemSize: string;
-  itemForm: string;
-  itemMetal: string;
-  itemLenght: number;
-  itemBride: number;
-  itemNew: number;
-  itemHit: number;
-  itemGift: number;
+  id: number;
+  categoryrus: string;
+  categoryeng: string;
+  article: number;
+  name: string;
+  desc_short: string;
+  desc_long: string;
+  price: number;
+  classrus: string;
+  sortrus: string;
+  colorrus: string;
+  size: string;
+  data: number;
+  formrus: string;
+  metalrus: string;
+  lenght: number;
+  bride: number;
+  new: number;
+  hit: number;
+  gift: number;
 };
 
 type TFilterCategory = {
-  filterCategoryId: number;
-  filterCategoryRus: string;
-  filterCategoryEng: string;
+  id: number;
+  categoryrus: string;
+  categoryeng: string;
 };
 
 type TFilterGroup = {
-  filterIdGroup: number;
-  filterIdItem: number;
-  filterName: string;
-  filterPrice: number;
-  filterNamerus: string;
-  filterLink: string;
+  id_group: number;
+  id_item: number;
+  name: string;
+  price: number;
+  namerus: string;
+  link: string;
 };
 
 // type TFilterGrCat = {
@@ -47,17 +49,15 @@ type TFilterGroup = {
 //   category: TFilterCategory;
 // };
 
-type TFilterGrCat = [
-  {"item": TFilterItemArr},
-  {"group": TFilterGroup}
-];
+/// type TFilterGrCat = [TFilterItemArr, TFilterGroup];
 
 export default function (req: any, res: any) {
   const filterPartId = Number(req.params.filter);
   const filterId = Number(req.params.idFil);
   const filterCatId = Number(req.params.idCat);
   const page = Number(req.params.page);
-  const items: TFilterGrCat[] = [];
+  let items: Array<TFilterItemArr> = [];
+  let group: Array<TFilterGroup> = [];
   const category: TFilterCategory[] = [];
 
   let query;
@@ -186,83 +186,81 @@ export default function (req: any, res: any) {
     "SELECT `id`, `table`, `filter` FROM `lu__filters` WHERE `id` = " +
       filterPartId +
       ";" +
-      "SELECT a.`id`, b.`id`, b.`categoryrus`, b.`categoryeng`, a.`article`, a.`name`, a.`desc_short`, a.`desc_long`, a.`price`, c.`classrus`, g.`sortrus`, d.`colorrus`, h.`size`, i.`id`, i.`data`, j.`id`, j.`data`, e.`formrus`, f.`metalrus`, a.`lenght`, a.`bride`, a.`new`, a.`hit`, a.`gift` FROM `lu__catalog` a, `lu__category` b, `lu__pearl_class` c, `lu__pearl_color` d, `lu__pearl_form` e, `lu__pearl_metal` f, `lu__pearl_sort` g, `lu__pearl_size` h, `lu__pearl_size_library` i, `lu__pearl_size_library` j WHERE a.`category` = b.`id` AND a.`class` = c.`id` AND a.`color` = d.`id` AND a.`form` = e.`id` AND a.`metal` = f.`id` AND a.`sort` = g.`id` AND a.`size` = h.`id` AND a.`size_start` = i.`id` AND a.`size_finish` = j.`id` AND a.`activ` = 1" +
+    "SELECT a.`id`, b.`categoryrus`, b.`categoryeng`, a.`article`, a.`name`, a.`desc_short`, a.`desc_long`, a.`price`, c.`classrus`, g.`sortrus`, d.`colorrus`, h.`size`, j.`data`, e.`formrus`, f.`metalrus`, a.`lenght`, a.`bride`, a.`new`, a.`hit`, a.`gift` FROM `lu__catalog` a, `lu__category` b, `lu__pearl_class` c, `lu__pearl_color` d, `lu__pearl_form` e, `lu__pearl_metal` f, `lu__pearl_sort` g, `lu__pearl_size` h, `lu__pearl_size_library` i, `lu__pearl_size_library` j WHERE a.`category` = b.`id` AND a.`class` = c.`id` AND a.`color` = d.`id` AND a.`form` = e.`id` AND a.`metal` = f.`id` AND a.`sort` = g.`id` AND a.`size` = h.`id` AND a.`size_start` = i.`id` AND a.`size_finish` = j.`id` AND a.`activ` = 1" +
       query +
       ";" +
-      "SELECT `id`, `categoryrus`, `categoryeng` FROM `lu__category` WHERE `activ` = 1;" +
+    "SELECT `id`, `categoryrus`, `categoryeng` FROM `lu__category` WHERE `activ` = 1;" +
       queryGroup,
-    function (err, result: [][]) {
+    function (err, result: [TFilterListArr[], TFilterItemArr[], TFilterCategory[], TFilterGroup[]?]) {
       if (err) {
         throw err;
-      } else {
-        // console.log(result, "!");
-        //console.log(result[0][0], "!")
-        // if(result[0][0] !== undefined){
-          // const filterListArr: TFilterListArr = {
-          //   filterListId: result[0][0].id,
-          //   filterListRus: result[0][0].filter,
-          //   filterListEng: result[0][0].table
-          // };
-        // }
-        
-
-        if (filterPartId != 8) {
-          result[1].forEach((el: any) => {
-            const filterItemArr: TFilterItemArr = {
-              itemId: el["id"],
-              itemCat: el["categoryrus"],
-              itemCatEng: el["categoryeng"],
-              itemArt: el["article"],
-              itemName: el["name"],
-              itemDesc: el["desc_short"],
-              itemDescLong: el["desc_long"],
-              itemClass: el["classrus"],
-              itemSort: el["sortrus"],
-              itemColor: el["colorrus"],
-              itemSize: el["size"],
-              itemForm: el["formrus"],
-              itemMetal: el["metalrus"],
-              itemLenght: el["lenght"],
-              itemBride: el["bride"],
-              itemNew: el["new"],
-              itemHit: el["hit"],
-              itemGift: el["gift"],
-            };
-            //--items.push(filterItemArr);
-          });
-        }
-
-        result[2].forEach((el: any) => {
-          const filterCategory: TFilterCategory = {
-            filterCategoryId: el["id"],
-            filterCategoryRus: el["categoryrus"],
-            filterCategoryEng: el["categoryeng"],
-          };
-          category.push(filterCategory);
-        });
-
-        if (filterPartId === 8) {
-          result[3].forEach((el: any) => {
-            const filterGroup: TFilterGroup = {
-              filterIdGroup: el["id_group"],
-              filterIdItem: el["id_item"],
-              filterName: el["name"],
-              filterPrice: el["price"],
-              filterNamerus: el["namerus"],
-              filterLink: el["link"],
-            };
-            //--items.push(filterGroup);
-          });
-        }
-
-        const filterArr = {
-          //--filter: filterListArr,
-          items: items,
-          category: category,
-        };
-
-        res.json(filterArr);
       }
+      
+      const filter: TFilterListArr = {
+        id: result[0][0].id,
+        table: result[0][0].table,
+        filter: result[0][0].filter
+      };
+
+      if (filterPartId != 8) {
+        result[1].forEach((el: any) => {
+          const filterItemArr: TFilterItemArr = {
+            id: el["id"],
+            categoryrus: el["categoryrus"],
+            categoryeng: el["categoryeng"],
+            article: el["article"],
+            name: el["name"],
+            desc_short: el["desc_short"],
+            desc_long: el["desc_long"],
+            price: el["price"], 
+            classrus: el["classrus"],
+            sortrus: el["sortrus"],
+            colorrus: el["colorrus"],
+            size: el["size"],
+            data: el["formrus"],
+            formrus: el["formrus"],
+            metalrus: el["metalrus"],
+            lenght: el["lenght"],
+            bride: el["bride"],
+            new: el["new"],
+            hit: el["hit"],
+            gift: el["gift"],
+          };
+          items.push(filterItemArr);
+        });
+      }
+
+      result[2].forEach((el: any) => {
+        const filterCategory: TFilterCategory = {
+          id: el["id"],
+          categoryrus: el["categoryrus"],
+          categoryeng: el["categoryeng"],
+        };
+        category.push(filterCategory);
+      });
+
+      if (filterPartId === 8 && result[3] !== undefined) {
+        result[3].forEach((el: any) => {
+          const filterGroup: TFilterGroup = {
+            id_group: el["id_group"],
+            id_item: el["id_item"],
+            name: el["name"],
+            price: el["price"],
+            namerus: el["namerus"],
+            link: el["link"],
+          };
+          group.push(filterGroup);
+        });
+      }
+
+      const filterArr = {
+        filter,
+        items,
+        category,
+        group
+      };
+
+      res.json(filterArr);
     }
   );
   // connection.end();

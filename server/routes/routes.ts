@@ -1,5 +1,6 @@
 import express from "express";
 
+import getData from "../controllers/getData";
 import getDelivery from "../controllers/getDelivery";
 import getActions from "../controllers/getActions";
 import getMap from "../controllers/getMap";
@@ -9,6 +10,7 @@ import getPage from "../controllers/getPage";
 
 const router = express.Router();
 
+router.get("/data", getData);
 router.get("/actions", getActions);
 router.get("/delivery", getDelivery);
 router.get("/map", getMap);

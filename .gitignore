@@ -19,7 +19,8 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-coverage
+server/coverage
+client/coverage
 *.lcov
 
 # nyc test coverage
@@ -38,8 +39,8 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
-servers/node_modules/
+client/node_modules/
+server/node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -52,7 +53,8 @@ typings/
 .npm
 
 # Optional eslint cache
-.eslintcache
+client/.eslintcache
+server/.eslintcache
 
 # Microbundle cache
 .rpt2_cache/
@@ -81,7 +83,8 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-build
+client/build
+server/build
 
 # Gatsby files
 .cache/
