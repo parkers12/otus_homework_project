@@ -1,8 +1,7 @@
 import React from "react";
 import "./item.scss";
 
-const Item = ({id, picture, article, name, desc, price, sale, category}) => {
-
+const Item = ({ id, picture, article, name, desc, price, sale, category }) => {
   const finPrice = price - (price * sale) / 100;
 
   return (
@@ -23,6 +22,6 @@ const Item = ({id, picture, article, name, desc, price, sale, category}) => {
       </div>
     </div>
   );
-}
+};
 
 export default Item;

@@ -10,7 +10,7 @@ import getPage from "../controllers/getPage";
 
 const router = express.Router();
 
-router.get("/data", getData);
+router.get("/api/data", getData);
 router.get("/actions", getActions);
 router.get("/delivery", getDelivery);
 router.get("/map", getMap);

@@ -1,6 +1,6 @@
+import supertest from "supertest";
 import app from "../index";
 import connection from "../model/db";
-import supertest from "supertest";
 
 // const express = require('express');
 // const app = require("./routes");
@@ -27,7 +27,7 @@ describe("Testing routes", () => {
       expect(response.headers["content-type"]).toEqual(
         "application/json; charset=utf-8"
       );
-      expect(response.body[0]["catId"]).toBe(290);
+      expect(response.body[0].catId).toBe(290);
       expect(response.statusCode).toEqual(200);
     });
 
@@ -41,7 +41,7 @@ describe("Testing routes", () => {
       expect(response.headers["content-type"]).toEqual(
         "application/json; charset=utf-8"
       );
-      expect(response.body[0]["pageHead"]).toEqual("О LUCKSHIMI");
+      expect(response.body[0].pageHead).toEqual("О LUCKSHIMI");
       expect(response.statusCode).toEqual(200);
     });
 

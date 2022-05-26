@@ -50,33 +50,29 @@ type TSize = {
 
 export default function getCategory(req: any, res: any) {
   connection.query(
-    "SELECT a.`id`, a.`name`, b.`categoryrus`, b.`categoryeng`, a.`article`, a.`desc_short`, a.`desc_long`, a.`price`, c.`classrus`, d.`colorrus`, e.`formrus`, f.`metalrus`, g.`sortrus`, a.`size_start`, a.`size_finish`, a.`activ`, a.`new`, a.`hit`, a.`gift` FROM `lu__catalog` a, `lu__category` b, `lu__pearl_class` c, `lu__pearl_color` d, `lu__pearl_form` e, `lu__pearl_metal` f, `lu__pearl_sort` g, `lu__pearl_size` h WHERE a.`category`=b.`id` AND a.`class`=c.`id` AND a.`color`=d.`id` AND a.`form`=e.`id` AND a.`metal`=f.`id` AND a.`sort`=g.`id` AND a.`size`=h.`id` AND a.`id`= " +
-      req.params.idItem +
-      ";" +
-      "SELECT `id`, `data` FROM `lu__pearl_size_library`",
-    function (err, result: [TItem[], TSize[]]) {
+    `SELECT a.id, a.name, b.categoryrus, b.categoryeng, a.article, a.desc_short, a.desc_long, a.price, c.classrus, d.colorrus, e.formrus, f.metalrus, g.sortrus, a.size_start, a.size_finish, a.activ, a.new, a.hit, a.gift FROM lu__catalog a, lu__category b, lu__pearl_class c, lu__pearl_color d, lu__pearl_form e, lu__pearl_metal f, lu__pearl_sort g, lu__pearl_size h WHERE a.category = b.id AND a.class = c.id AND a.color = d.id AND a.form = e.id AND a.metal = f.id AND a.sort = g.id AND a.size = h.id AND a.id = ${req.params.idItem};` +
+      `SELECT id, data FROM lu__pearl_size_library`,
+    (err, result: [TItem[], TSize[]]) => {
       if (err) {
-          throw err;
+        throw err;
       }
       const itemData = result[0][0];
       const sizes = result[1];
 
-      const index_start = sizes.find(
-        (item) => item["id"] === itemData.size_start
-      );
-      const index_finish = sizes.find(
-        (item) => item["id"] === itemData.size_finish
+      const indexStart = sizes.find((item) => item.id === itemData.size_start);
+      const indexFinish = sizes.find(
+        (item) => item.id === itemData.size_finish
       );
 
-      let size_st: string = "";
-      let size_fn: string = "";
+      let sizeSt = "";
+      let sizeFn = "";
 
-      if (index_start !== undefined && index_finish === undefined) {
-        size_st = index_start["data"];
-      } else if (index_start !== undefined && index_finish !== undefined) {
-        // size = `${index_start["data"]}-${index_finish["data"]}`;
-        size_st = index_start["data"];
-        size_fn = index_finish["data"];
+      if (indexStart !== undefined && indexFinish === undefined) {
+        sizeSt = indexStart.data;
+      } else if (indexStart !== undefined && indexFinish !== undefined) {
+        // size = `${indexStart["data"]}-${indexFinish["data"]}`;
+        sizeSt = indexStart.data;
+        sizeFn = indexFinish.data;
       }
 
       const item: TItem = {
@@ -93,8 +89,8 @@ export default function getCategory(req: any, res: any) {
         formrus: itemData.formrus,
         metalrus: itemData.metalrus,
         sortrus: itemData.sortrus,
-        size_start: size_st,
-        size_finish: size_fn,
+        size_start: sizeSt,
+        size_finish: sizeFn,
         activ: itemData.activ,
         new: itemData.new,
         hit: itemData.hit,

@@ -3,10 +3,12 @@ import connection from "../model/db";
 function getActions(req: any, res: any) {
   connection.query(
     "SELECT `id`, `link`, `title`, `text`, `picture` FROM `lu__actions` WHERE `activ` = 1;",
-    function (err, result) {
+    (err, result) => {
       if (err) {
-          throw err;
+        throw err;
       }
+
+      console.log(result);
       res.json(result);
     }
   );

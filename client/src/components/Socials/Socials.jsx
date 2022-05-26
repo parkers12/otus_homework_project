@@ -26,12 +26,11 @@ const Socials = ({ size }) => {
   const [items, setItems] = useState([]);
   const classes = classNames("socials-list", size);
 
-
   useEffect(() => {
-    fetch('/api/data', {
+    fetch("/api/data", {
       method: "GET",
     })
-      .then(response => response.json())
+      .then((response) => response.json())
       .then(
         (result) => {
           setItems(result);
@@ -47,13 +46,12 @@ const Socials = ({ size }) => {
   } else {
     return (
       <div className={classes}>
-        {items.map(item => {
+        {items.map((item) => {
           const imgUrl = `./icons/${item.namecss}`;
-            <a href={item.link}>
-              <img src={imgUrl} />
-            </a>
-          }
-        )}
+          <a href={item.link}>
+            <img src={imgUrl} />
+          </a>;
+        })}
         {/* <a href="/">
           <SocialsIconIn />
         </a>

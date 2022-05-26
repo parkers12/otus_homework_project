@@ -13,11 +13,7 @@ const Input = ({ text, className, disabled, active, ...attrs }) => {
         <div className="input-group__prepend">
           <span className="input-group__prepend-text"></span>
         </div>
-        <input
-          type="text"
-          className="input-group__field"
-          placeholder={text}
-        />
+        <input type="text" className="input-group__field" placeholder={text} />
       </div>
     </div>
   );

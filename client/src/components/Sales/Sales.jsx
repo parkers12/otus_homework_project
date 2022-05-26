@@ -40,7 +40,7 @@ const itemsData = [
 ];
 
 const itemElements = itemsData.map((item) => (
-  <Item 
+  <Item
     id={item.id}
     picture={item.picture}
     article={item.article}

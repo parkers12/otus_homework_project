@@ -23,7 +23,6 @@ function Header() {
     // props.onOpenMenuMobile();
   };
 
-
   return (
     <div className="header">
       <div className="header__info">
@@ -59,7 +58,6 @@ function Header() {
       </div>
     </div>
   );
-
 }
 
 export default Header;

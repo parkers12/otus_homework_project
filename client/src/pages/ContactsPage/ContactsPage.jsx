@@ -2,17 +2,14 @@ import React from "react";
 import "./contactsPage.scss";
 import Socials from "../../components/Socials";
 import Title from "../../components/Title";
-import {
-  ReactComponent as WhatsAppIcon
-} from "../../assets/icons/whatsapp.svg";
+import { ReactComponent as WhatsAppIcon } from "../../assets/icons/whatsapp.svg";
 import { ReactComponent as ClockIcon } from "../../assets/icons/clock.svg";
 import { ReactComponent as PhoneIcon } from "../../assets/icons/phone.svg";
 import { ReactComponent as LetterIcon } from "../../assets/icons/letter.svg";
 
 function ContactsPage() {
-
   const tel =
-  "whatsapp://send/?text=Hello&amp;phone=+79263555671&amp;abid=+79263555671";
+    "whatsapp://send/?text=Hello&amp;phone=+79263555671&amp;abid=+79263555671";
 
   return (
     <div className="contacts-page">
@@ -80,9 +77,7 @@ function ContactsPage() {
         <div className="contacts-page__content-block">
           <p className="whatsapp-icon">
             <WhatsAppIcon />
-            <a href={tel}>
-              Начать чат в whatsapp
-            </a>
+            <a href={tel}>Начать чат в whatsapp</a>
           </p>
         </div>
         <Title className="title_second">
@@ -91,9 +86,7 @@ function ContactsPage() {
         <div className="contacts-page__content-block">
           <Socials />
         </div>
-        <Title className="title_second">
-          Реквизиты Продавца
-        </Title>
+        <Title className="title_second">Реквизиты Продавца</Title>
         <div className="contacts-page__content-block">
           <p>ИП Эмануилова Елена Васильевна</p>
           <p>Юридический адрес: 117593, г. Москва, ул. Рокотова, 4/2 - 405</p>

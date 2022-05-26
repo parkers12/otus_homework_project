@@ -33,7 +33,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "src/assets/icons", to: "icons" },
-        { from: "src/assets/fonts", to: "fonts" }
+        { from: "src/assets/fonts", to: "fonts" },
       ],
     }),
     new CleanWebpackPlugin({
@@ -45,8 +45,9 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
+        loader: "babel-loader",
+        options: {
+          rootMode: "upward",
         },
       },
       {
@@ -97,7 +98,7 @@ module.exports = {
       },
       {
         test: /\.svg$/i,
-        use: ['@svgr/webpack', 'file-loader']
+        use: ["@svgr/webpack", "file-loader"],
       },
       {
         test: /\.(jpg|jpeg|gif|ico)$/i,
@@ -118,10 +119,9 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     proxy: {
-      '/api': {
-        target: 'http://localhost:9000',
-        pathRewrite: { '^/api': '' }
+      "/api": {
+        target: "http://localhost:3000",
       },
-    }
+    },
   },
 };
