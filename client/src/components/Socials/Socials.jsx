@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+// import axios from "axios";
 import * as PropTypes from "prop-types";
 import classNames from "classnames";
+
+// import { getList } from './getList';
 // import {
 //   ReactComponent as SocialsIconIn
 // } from "../../assets/icons/socials-in.svg";
@@ -23,31 +26,30 @@ import "./socials.scss";
 
 const Socials = ({ size }) => {
   const [error, setError] = useState(null);
-  const [items, setItems] = useState([]);
+  const [list, setList] = useState([]);
   const classes = classNames("socials-list", size);
 
   useEffect(() => {
-    fetch("/api/data", {
-      method: "GET",
-    })
-      .then((response) => response.json())
+    fetch('/api/data')
+      .then(response => response.json())
       .then(
         (result) => {
-          setItems(result);
+          setList(result);
         },
         (error) => {
           setError(error);
         }
       );
   }, []);
+    
 
   if (error) {
     return <div>Ошибка: {error.message}</div>;
   } else {
     return (
       <div className={classes}>
-        {items.map((item) => {
-          const imgUrl = `./icons/${item.namecss}`;
+        {list.map(item => {
+          const imgUrl = `./icons/${item.namecss}.jpg`;
           <a href={item.link}>
             <img src={imgUrl} />
           </a>;

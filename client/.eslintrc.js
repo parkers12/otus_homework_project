@@ -10,15 +10,15 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
   ],
-  plugins: ["jest", "react"],
+  parser: "@babel/eslint-parser",
   parserOptions: {
-    ecmaVersion: 12,
+    ecmaVersion: "latest",
     sourceType: "module",
     ecmaFeatures: {
       jsx: true,
     },
   },
-  parser: "@babel/eslint-parser",
+  plugins: ["jest", "@babel", "react"],
   rules: {
     strict: 0,
     "max-len": [

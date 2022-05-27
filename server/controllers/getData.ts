@@ -8,7 +8,7 @@ function getData(req: any, res: any) {
         throw err;
       }
       // console.log(result, 1);
-      res.json(result);
+      res.json({result});
     }
   );
   // connection.end();
