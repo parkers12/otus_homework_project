@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "./../../styles/includes/variables";
 
 .copyright {
   padding: $sp * 3 $sp * 2;
@@ -7,6 +7,14 @@
   font-weight: $font-weight-light;
   font-size: $middle-size;
   letter-spacing: $letter-spacing-big;
+
+  a {
+    text-decoration: none;
+    color: $grey;
+    &:hover {
+      color: $coral;
+    }
+  }
 }
 
 @media (min-width: $ipad) {
@@ -18,5 +26,6 @@
 
 @media (min-width: $desctop) {
   .copyright {
+    text-align: center;
   }
 }

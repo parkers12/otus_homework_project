@@ -1,12 +1,14 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {
+  CleanWebpackPlugin
+} = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: "./src/index.js",
+    main: path.resolve(__dirname, "./src/index.js"),
   },
   output: {
     filename: "./js/bundle.js",
@@ -15,7 +17,7 @@ module.exports = {
     environment: {
       arrowFunction: false,
     },
-    // assetModuleFilename: "fonts/futura/[name][ext]",
+    // assetModuleFilename: "fonts/comfortaa/[name][ext]",
   },
   mode: process.env.NODE_ENV === "development" ? "development" : "production",
   performance: {
@@ -31,9 +33,15 @@ module.exports = {
       filename: "./styles/styles.css",
     }),
     new CopyPlugin({
-      patterns: [
-        { from: "src/assets/icons", to: "icons" },
-        { from: "src/assets/fonts", to: "fonts" },
+      patterns: [{
+          from: "src/assets/icons",
+          to: "icons"
+        },
+        {
+          from: "src/assets/fonts",
+          to: "fonts"
+        },
+        { from: "src/assets/img", to: "img" },
       ],
     }),
     new CleanWebpackPlugin({
@@ -41,13 +49,12 @@ module.exports = {
     }),
   ],
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: "babel-loader",
         options: {
-          rootMode: "upward",
+          presets: ["@babel/preset-env"],
         },
       },
       {
@@ -98,20 +105,63 @@ module.exports = {
       },
       {
         test: /\.svg$/i,
-        use: ["@svgr/webpack", "file-loader"],
+        // use: ["@svgr/webpack", "file-loader"]
+        use: [
+          "@svgr/webpack",
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'icons/',
+              name: '[name].[ext]'
+            }
+          }
+        ]
       },
+      // {
+      //   test: /\.(jpg|jpeg|gif|ico)$/i,
+      //   type: "asset/resource",
+      //   generator: {
+      //     filename: 'img/[hash][ext][query]'
+      //   }
+      // },
+      /*{
+        test: /\.(eot|ttf|woff|woff2)$/,
+        // loader: 'file-loader',
+        // type: "asset/resource",
+        // generator: {
+        //   filename: 'fonts/[hash][ext][query]'
+        // }
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'fonts/',
+              name: '[name].[ext]'
+            }
+          }
+        ]
+      },*/
       {
-        test: /\.(jpg|jpeg|gif|ico)$/i,
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: "asset/resource",
+        generator: {
+          filename: "img/[name][ext][query]",
+        },
       },
       {
-        test: /\.(eot|ttf|woff)$/,
-        type: "asset/fonts",
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/comfortaa/[name][ext][query]",
+        },
       },
     ],
   },
   resolve: {
     extensions: [".js", ".jsx"],
+  },
+  stats: {
+    children: true,
   },
   devServer: {
     compress: true,

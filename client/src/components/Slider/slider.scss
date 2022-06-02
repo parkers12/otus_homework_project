@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "./../../styles/includes/variables";
 
 .slider {
   width: 100%;
@@ -7,7 +7,7 @@
   &__item {
     width: 100%;
     height: 100%;
-    background-image: url("#{$files}/recources/slider_sm.png");
+    background-image: url("./../../#{$path-img-res}/slider_sm.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

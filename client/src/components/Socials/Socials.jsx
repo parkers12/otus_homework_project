@@ -1,27 +1,8 @@
 import React, { useEffect, useState } from "react";
-// import axios from "axios";
 import * as PropTypes from "prop-types";
 import classNames from "classnames";
 
-// import { getList } from './getList';
-// import {
-//   ReactComponent as SocialsIconIn
-// } from "../../assets/icons/socials-in.svg";
-// import {
-//   ReactComponent as SocialsIconYt
-// } from "../../assets/icons/socials-yt.svg";
-// import {
-//   ReactComponent as SocialsIconPt
-// } from "../../assets/icons/socials-pt.svg";
-// import {
-//   ReactComponent as SocialsIconTw
-// } from "../../assets/icons/socials-tw.svg";
-// import {
-//   ReactComponent as SocialsIconGm
-// } from "../../assets/icons/socials-gm.svg";
-// import {
-//   ReactComponent as SocialsIconFb
-// } from "../../assets/icons/socials-fb.svg";
+import { getIcon } from "../../fetchList";
 import "./socials.scss";
 
 const Socials = ({ size }) => {
@@ -30,8 +11,7 @@ const Socials = ({ size }) => {
   const classes = classNames("socials-list", size);
 
   useEffect(() => {
-    fetch('/api/data')
-      .then(response => response.json())
+    getIcon()
       .then(
         (result) => {
           setList(result);
@@ -49,29 +29,13 @@ const Socials = ({ size }) => {
     return (
       <div className={classes}>
         {list.map(item => {
-          const imgUrl = `./icons/${item.namecss}.jpg`;
-          <a href={item.link}>
-            <img src={imgUrl} />
-          </a>;
+          const imgUrl = `/icons/${item.name}.svg`;
+          return (
+            <a href={item.link}>
+              <img src={imgUrl} class={item.class} />
+            </a>
+          );
         })}
-        {/* <a href="/">
-          <SocialsIconIn />
-        </a>
-        <a href="/">
-          <SocialsIconYt />
-        </a>
-        <a href="/">
-          <SocialsIconPt />
-        </a>
-        <a href="/">
-          <SocialsIconTw />
-        </a>
-        <a href="/">
-          <SocialsIconGm />
-        </a>
-        <a href="/">
-          <SocialsIconFb />
-        </a> */}
       </div>
     );
   }

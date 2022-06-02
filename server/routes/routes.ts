@@ -11,11 +11,11 @@ import getPage from "../controllers/getPage";
 const router = express.Router();
 
 router.get("/api/data", getData);
-router.get("/actions", getActions);
-router.get("/delivery", getDelivery);
-router.get("/map", getMap);
-router.get("/filter/:filter/:idFil/:idCat?/:page?", getFilter);
-router.get("/:category/1/:idItem/", getItem);
-router.get("/:page", getPage);
+router.get("/api/actions", getActions);
+router.get("/api/delivery", getDelivery);
+router.get("/api/map", getMap);
+router.get("/api/filter/:filter/:idFil/:idCat?/:page?", getFilter);
+router.get("/api/:category/1/:idItem/", getItem);
+router.get("/api/:page", getPage);
 
 export default router;

@@ -132,7 +132,7 @@ function createElemMenu(
 
 export default function geyMap(req: any, res: any) {
   connection.query(
-    "SELECT `id`, `namerus`, `nameeng`, `blok`, `order`, `head` FROM `lu__menu` WHERE `blok` = 1 OR `blok` = 5 OR `blok` = 6; SELECT `id`, `categoryrus`, `categoryeng` FROM `lu__category` WHERE `activ` = 1; SELECT b.`id`, b.`name`, a.`categoryeng`, b.`category`, b.`activ`, b.`bride` FROM `lu__category` a, `lu__catalog` b WHERE a.`id` = b.`category`;",
+    "SELECT `id`, `namerus`, `nameeng`, `blok`, `order`, `head` FROM `lu__menu` WHERE `blok` = 1 OR `blok` = 5 OR `blok` = 6 AND `activ` = 1 ORDER BY `order`; SELECT `id`, `categoryrus`, `categoryeng` FROM `lu__category` WHERE `activ` = 1; SELECT b.`id`, b.`name`, a.`categoryeng`, b.`category`, b.`activ`, b.`bride` FROM `lu__category` a, `lu__catalog` b WHERE a.`id` = b.`category`;",
     (err, result: [TArrayMenu[], TChildrenElem[], TArrayItems[]]): void => {
       // let mapSite;
       if (err) {

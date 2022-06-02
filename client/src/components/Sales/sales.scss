@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "./../../styles/includes/variables";
 
 .sales {
   width: 100%;
@@ -25,10 +25,10 @@
           background-repeat: no-repeat;
 
           &_left {
-            background-image: url("#{$files}/icons/arrow-left.svg");
+            background-image: url("./../../#{$path-img-icons}/arrow-left.svg");
           }
           &_right {
-            background-image: url("#{$files}/icons/arrow-right.svg");
+            background-image: url("./../../#{$path-img-icons}/arrow-right.svg");
           }
 
           & + & {
