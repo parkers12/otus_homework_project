@@ -2,10 +2,10 @@ import React from "react";
 import "./contactsPage.scss";
 import Socials from "../../components/Socials";
 import Title from "../../components/Title";
-import { ReactComponent as WhatsAppIcon } from "../../assets/icons/whatsapp.svg";
-import { ReactComponent as ClockIcon } from "../../assets/icons/clock.svg";
-import { ReactComponent as PhoneIcon } from "../../assets/icons/phone.svg";
-import { ReactComponent as LetterIcon } from "../../assets/icons/letter.svg";
+// import { ReactComponent as WhatsAppIcon } from "../../assets/icons/whatsapp.svg";
+// import { ReactComponent as ClockIcon } from "../../assets/icons/clock.svg";
+// import { ReactComponent as PhoneIcon } from "../../assets/icons/phone.svg";
+// import { ReactComponent as LetterIcon } from "../../assets/icons/letter.svg";
 
 function ContactsPage() {
   const tel =
@@ -33,10 +33,12 @@ function ContactsPage() {
         <div className="contacts-page__content-block">
           <p className="clock-icon">
             <ClockIcon />
+            <img src="../../assets/icons/clock.svg" />
             <span>Пн-Пт — с 10:00 до 20:00</span>
           </p>
           <p className="clock-icon">
             <ClockIcon />
+            <img src="../../assets/icons/clock.svg" />
             <span>Сб-Вс — выходной</span>
           </p>
         </div>
@@ -44,10 +46,12 @@ function ContactsPage() {
         <div className="contacts-page__content-block">
           <p className="phone-icon">
             <PhoneIcon />
+            <img src="../../assets/icons/phone.svg" />
             <a href="tel:+74955324091">+7 (499) 391-68-56</a>
           </p>
           <p className="letter-icon">
             <LetterIcon />
+            <img src="../../assets/icons/letter.svg" />
             <a href="mailto:info@luckshimi.ru">info@luckshimi.ru</a>
           </p>
         </div>
@@ -55,10 +59,12 @@ function ContactsPage() {
         <div className="contacts-page__content-block">
           <p className="phone-icon">
             <PhoneIcon />
+            <img src="../../assets/icons/phone.svg" />
             <a href="tel:+74955324091">+7 (499) 391-68-56</a>
           </p>
           <p className="letter-icon">
             <LetterIcon />
+            <img src="../../assets/icons/letter.svg" />
             <a href="mailto:service@luckshimi.ru">service@luckshimi.ru</a>
           </p>
         </div>
@@ -66,10 +72,12 @@ function ContactsPage() {
         <div className="contacts-page__content-block">
           <p className="phone-icon">
             <PhoneIcon />
+            <img src="../../assets/icons/phone.svg" />
             <a href="tel:+74955324091">+7 (499) 391-68-56</a>
           </p>
           <p className="letter-icon">
             <LetterIcon />
+            <img src="../../assets/icons/letter.svg" />
             <a href="mailto:business@luckshimi.ru">business@luckshimi.ru</a>
           </p>
         </div>
@@ -77,6 +85,7 @@ function ContactsPage() {
         <div className="contacts-page__content-block">
           <p className="whatsapp-icon">
             <WhatsAppIcon />
+            <img src="../../assets/icons/whatsapp.svg" />
             <a href={tel}>Начать чат в whatsapp</a>
           </p>
         </div>

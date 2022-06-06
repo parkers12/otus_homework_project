@@ -1,4 +1,8 @@
-@import "./../../styles/includes/variables";
+// @import "../../styles/styles";
+@import "../../styles/variables.scss";
+
+// $files: "assets";
+// $path-img-icons: "#{$files}/icons";
 
 .sales {
   width: 100%;
@@ -25,10 +29,10 @@
           background-repeat: no-repeat;
 
           &_left {
-            background-image: url("./../../#{$path-img-icons}/arrow-left.svg");
+            background-image: url("../../#{$path-img-icons}/arrow-left.svg");
           }
           &_right {
-            background-image: url("./../../#{$path-img-icons}/arrow-right.svg");
+            background-image: url("../../#{$path-img-icons}/arrow-right.svg");
           }
 
           & + & {

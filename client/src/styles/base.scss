@@ -1,0 +1,37 @@
+/* Base styles */
+
+// @import "variables";
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+:root {
+  font-size: $main-size;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: $font-family, $fallback-font;
+  background-color: $white;
+}
+
+/* Base styles */

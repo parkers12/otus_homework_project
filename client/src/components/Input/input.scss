@@ -1,4 +1,4 @@
-@import "./../../styles/includes/variables";
+@import "../../styles/variables.scss";
 
 .input-group {
   position: relative;
@@ -95,7 +95,7 @@
     .input-group {
       &__prepend {
         &-text {
-          background-image: url("./../../#{$path-img-icons}/phone.svg");
+          background-image: url("../../#{$path-img-icons}/phone.svg");
         }
       }
     }
@@ -105,7 +105,7 @@
     .input-group {
       &__prepend {
         &-text {
-          background-image: url("./../../#{$path-img-icons}/person.svg");
+          background-image: url("../../#{$path-img-icons}/person.svg");
         }
       }
     }
@@ -115,7 +115,7 @@
     .input-group {
       &__prepend {
         &-text {
-          background-image: url("./../../#{$path-img-icons}/clock.svg");
+          background-image: url("../../#{$path-img-icons}/clock.svg");
         }
       }
     }

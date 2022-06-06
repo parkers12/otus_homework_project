@@ -6,7 +6,7 @@ import Item from "../Item";
 const itemsData = [
   {
     id: 1,
-    picture: "1.jpg",
+    picture: "/img/1.jpg",
     article: 1,
     name: "Кольцо Diana с жемчугом высшего класса",
     // eslint-disable-next-line max-len
@@ -17,7 +17,7 @@ const itemsData = [
   },
   {
     id: 2,
-    picture: "2.jpg",
+    picture: "/img/2.jpg",
     article: 2,
     name: "Тонкий браслет Classic из белого жемчуга 6-6,5 мм АА+",
     // eslint-disable-next-line max-len
@@ -28,7 +28,7 @@ const itemsData = [
   },
   {
     id: 3,
-    picture: "3.jpg",
+    picture: "/img/3.jpg",
     article: 3,
     name: "Серьги-пусеты с белым жемчугом 9-9,5 мм",
     // eslint-disable-next-line max-len

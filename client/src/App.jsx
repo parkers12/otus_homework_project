@@ -32,12 +32,13 @@ export default function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <div className="content">
         <Header onOpenCall={onOpenCall} onOpenMenuMobile={onOpenMenuMobile} />
         <Routes>
-          <Route path="/mainPage" component={MainPage} />
-          <Route path="/contactsPage" component={ContactsPage} />
+          <Route path="/" element={<MainPage />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/contacts" element={<ContactsPage />} />
         </Routes>
       </div>
 

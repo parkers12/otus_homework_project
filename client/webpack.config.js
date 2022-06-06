@@ -33,7 +33,8 @@ module.exports = {
       filename: "./styles/styles.css",
     }),
     new CopyPlugin({
-      patterns: [{
+      patterns: [
+        {
           from: "src/assets/icons",
           to: "icons"
         },
@@ -41,7 +42,10 @@ module.exports = {
           from: "src/assets/fonts",
           to: "fonts"
         },
-        { from: "src/assets/img", to: "img" },
+        {
+          from: "src/assets/img",
+          to: "img"
+        },
       ],
     }),
     new CleanWebpackPlugin({
@@ -104,43 +108,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.svg$/i,
-        // use: ["@svgr/webpack", "file-loader"]
-        use: [
-          "@svgr/webpack",
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'icons/',
-              name: '[name].[ext]'
-            }
-          }
-        ]
+        test: /\.svg/,
+        type: "asset/resource",
+        generator: {
+          filename: "icons/[name][ext]"
+        }
       },
-      // {
-      //   test: /\.(jpg|jpeg|gif|ico)$/i,
-      //   type: "asset/resource",
-      //   generator: {
-      //     filename: 'img/[hash][ext][query]'
-      //   }
-      // },
-      /*{
-        test: /\.(eot|ttf|woff|woff2)$/,
-        // loader: 'file-loader',
-        // type: "asset/resource",
-        // generator: {
-        //   filename: 'fonts/[hash][ext][query]'
-        // }
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'fonts/',
-              name: '[name].[ext]'
-            }
-          }
-        ]
-      },*/
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: "asset/resource",

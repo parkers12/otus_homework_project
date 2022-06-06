@@ -4,9 +4,9 @@ import Socials from "../Socials";
 import Menu from "../Menu";
 import Phone from "../Phone";
 import Cart from "../Cart";
-import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
-import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
-import { ReactComponent as LogoIcon } from "../../assets/icons/logo.svg";
+import SearchIcon from "../../assets/icons/search.svg";
+import MenuIcon from "../../assets/icons/menu.svg";
+import LogoIcon from "../../assets/icons/logo.svg";
 import "./header.scss";
 
 // function Header(props) {
@@ -36,21 +36,24 @@ function Header() {
             </div>
             <div className="header__info-block-right">
               <div className="header__info-block-right-search">
-                <SearchIcon />
+              {/* <SearchIcon /> */}
+                <img src={SearchIcon} />
               </div>
               <div className="header__info-block-right-cart">
                 <Cart />
               </div>
               <div className="header__info-block-right-mobile-menu">
-                <MenuIcon onClick={onOpenMenuMobile} />
+                {/* <MenuIcon onClick={onOpenMenuMobile} /> */}
+                <img src={MenuIcon} onClick={onOpenMenuMobile} />
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="header__logo">
-        <NavLink to="/mainPage">
-          <LogoIcon />
+        <NavLink to="/">
+          {/* <LogoIcon /> */}
+          <img src={LogoIcon} onClick={onOpenMenuMobile} />
         </NavLink>
       </div>
       <div className="header__menu">

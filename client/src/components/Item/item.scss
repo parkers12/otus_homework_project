@@ -1,4 +1,4 @@
-@import "./../../styles/styles";
+@import "../../styles/variables.scss";
 
 .item {
   margin-top: $sp;
@@ -6,7 +6,7 @@
 
   &__photo {
     width: 100%;
-    //background-image: url("#{$files}/recources/1.jpg");
+    background-image: url("../../#{$files}/recources/1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }

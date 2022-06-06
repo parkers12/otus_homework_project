@@ -1,4 +1,7 @@
-@import "./../../styles/includes/variables";
+@import "../../styles/variables.scss";
+
+// $files: "assets";
+// $path-img-icons: "#{$files}/icons";
 
 .map {
   width: 100%;
@@ -38,19 +41,19 @@
 
         &_phone {
           &::before {
-            background-image: url("./../../#{$path-img-icons}/phone.svg");
+            background-image: url("../../#{$path-img-icons}/phone.svg");
           }
         }
 
         &_marker {
           &::before {
-            background-image: url("./../../#{$path-img-icons}/marker.svg");
+            background-image: url("../../#{$path-img-icons}/marker.svg");
           }
         }
 
         &_letter {
           &::before {
-            background-image: url("./../../#{$path-img-icons}/letter.svg");
+            background-image: url("../../#{$path-img-icons}/letter.svg");
           }
         }
       }

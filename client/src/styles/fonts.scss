@@ -1,0 +1,64 @@
+/* Fonts */
+@import "./variables.scss";
+/*
+@font-face {
+  font-family: 'comfortaa';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: local("Comfortaa-Light"),
+      url("./assets/fonts/comfortaa/Comfortaa-Light.woff") format("woff"),
+      url("./assets/fonts/comfortaa/Comfortaa-Light.ttf") format("truetype"),
+      url("./assets/fonts/comfortaa/Comfortaa-Light.eot?#iefix")
+        format("embedded-opentype");
+}
+
+@font-face {
+  font-family: 'comfortaa';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: local("Comfortaa-Regular"),
+      url("./assets/fonts/comfortaa/Comfortaa-Regular.woff") format("woff"),
+      url("./assets/fonts/comfortaa/Comfortaa-Regular.ttf") format("truetype"),
+      url("./assets/fonts/comfortaa/Comfortaa-Regular.eot?#iefix")
+        format("embedded-opentype");
+}
+
+@font-face {
+  font-family: 'comfortaa';
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src: local("Comfortaa-Bold"),
+      url("./assets/fonts/comfortaa/Comfortaa-Bold.woff") format("woff"),
+      url("./assets/fonts/comfortaa/Comfortaa-Bold.ttf") format("truetype"),
+      url("./assets/fonts/comfortaa/Comfortaa-Bold.eot?#iefix")
+        format("embedded-opentype");
+}
+*/
+
+@mixin font-face(
+  $font-family,
+  $font,
+  $path-fonts,
+  $weight: normal,
+  $style: normal
+) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: local("#{$font}"),
+      url("./#{$path-fonts}/#{$font-family}/#{$font}.woff") format("woff"),
+      url("./#{$path-fonts}/#{$font-family}/#{$font}.ttf") format("truetype"),
+      url("./#{$path-fonts}/#{$font-family}/#{$font}.eot?#iefix")
+        format("embedded-opentype");
+  }
+}
+
+@include font-face($font-family, "Comfortaa-Light", $path-fonts, 300, normal);
+@include font-face($font-family, "Comfortaa-Regular", $path-fonts, normal, normal);
+@include font-face($font-family, "Comfortaa-Bold", $path-fonts, bold, normal);
+
+/* /Fonts */

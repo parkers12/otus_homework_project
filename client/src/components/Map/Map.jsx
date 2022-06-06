@@ -18,25 +18,13 @@ function Map() {
         <div className="map__contacts">
           <div className="title title_map">Контакты</div>
           <div className="map__contacts-list">
-            <div
-              className="
-              map__contacts-list-item
-              map__contacts-list-item_phone"
-            >
+            <div className="map__contacts-list-item map__contacts-list-item_phone">
               +7 (499) 391-68-56
             </div>
-            <div
-              className="
-              map__contacts-list-item
-              map__contacts-list-item_marker"
-            >
+            <div className="map__contacts-list-item map__contacts-list-item_marker">
               117556, г. Москва, ул. Варшавское шоссе, д. 85
             </div>
-            <div
-              className="
-              map__contacts-list-item
-              map__contacts-list-item_letter"
-            >
+            <div className="map__contacts-list-item map__contacts-list-item_letter">
               info@luckshimi.ru
             </div>
           </div>

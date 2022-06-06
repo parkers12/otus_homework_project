@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as PropTypes from "prop-types";
 import "./modal.scss";
-import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
+// import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
 import Button from "../Button";
 import Input from "../Input";
 import Textarea from "../Textarea";
@@ -23,7 +23,8 @@ const Modal = (props) => {
             <div className="modal__header">
               <div className="title title_modal">{props.title}</div>
               <div className="modal__header-close">
-                <CloseIcon onClick={onCloseCall} />
+                {/* <CloseIcon onClick={onCloseCall} /> */}
+                <img src="../../assets/icons/close.svg" />
               </div>
             </div>
             <div className="modal__body">
