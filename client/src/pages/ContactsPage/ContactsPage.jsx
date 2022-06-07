@@ -2,10 +2,10 @@ import React from "react";
 import "./contactsPage.scss";
 import Socials from "../../components/Socials";
 import Title from "../../components/Title";
-// import { ReactComponent as WhatsAppIcon } from "../../assets/icons/whatsapp.svg";
-// import { ReactComponent as ClockIcon } from "../../assets/icons/clock.svg";
-// import { ReactComponent as PhoneIcon } from "../../assets/icons/phone.svg";
-// import { ReactComponent as LetterIcon } from "../../assets/icons/letter.svg";
+import WhatsAppIcon from "../../assets/icons/whatsapp.svg";
+import ClockIcon from "../../assets/icons/clock.svg";
+import PhoneIcon from "../../assets/icons/phone.svg";
+import LetterIcon from "../../assets/icons/letter.svg";
 
 function ContactsPage() {
   const tel =

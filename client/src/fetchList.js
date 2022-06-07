@@ -11,14 +11,26 @@ export function getIcon() {
       })
 }
 
+// export function getMenu() {
+//     return fetch("/api/map")
+//       .then((response) => {
+//         if(response.status === 200) {
+//           return response.json();     
+//         } else {
+//           console.log("SOMETHING WENT WRONG")
+//           this.setState({ requestFailed: true })
+//         }
+//       })
+// }
+
 export function getMenu() {
-    return fetch("/api/map")
-      .then((response) => {
-        if(response.status === 200) {
-          return response.json();     
-        } else {
-          console.log("SOMETHING WENT WRONG")
-          this.setState({ requestFailed: true })
-        }
-      })
+  return fetch("/api/menu")
+    .then((response) => {
+      if(response.status === 200) {
+        return response.json();     
+      } else {
+        console.log("SOMETHING WENT WRONG")
+        this.setState({ requestFailed: true })
+      }
+    })
 }

@@ -7,10 +7,12 @@ import getMap from "../controllers/getMap";
 import getFilter from "../controllers/getFilter";
 import getItem from "../controllers/getItem";
 import getPage from "../controllers/getPage";
+import getMenu from "../controllers/getMenu";
 
 const router = express.Router();
 
 router.get("/api/data", getData);
+router.get("/api/menu", getMenu);
 router.get("/api/actions", getActions);
 router.get("/api/delivery", getDelivery);
 router.get("/api/map", getMap);

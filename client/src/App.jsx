@@ -37,7 +37,7 @@ export default function App() {
         <Header onOpenCall={onOpenCall} onOpenMenuMobile={onOpenMenuMobile} />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/catalog" element={<Catalog />} />
+          {/* <Route path="/catalog" element={<Catalog />} /> */}
           <Route path="/contacts" element={<ContactsPage />} />
         </Routes>
       </div>
