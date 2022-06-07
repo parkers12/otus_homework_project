@@ -32,7 +32,7 @@ const Socials = ({ size }) => {
           const imgUrl = `/icons/${item.name}.svg`;
           return (
             <a href={item.link}>
-              <img src={imgUrl} class={item.class} />
+              <img src={imgUrl} className={item.class} />
             </a>
           );
         })}
