@@ -6,7 +6,7 @@
 
   &__photo {
     width: 100%;
-    background-image: url("../../#{$files}/recources/1.jpg");
+    background-image: url("../../#{$path-img-res}/1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }

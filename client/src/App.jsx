@@ -3,8 +3,9 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import "./app.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import MainPage from "./pages/MainPage";
-import ContactsPage from "./pages/ContactsPage";
+import Main from "./pages/Main";
+import Catalog from "./pages/Catalog";
+import Contacts from "./pages/Contacts";
 import Modal from "./components/Modal";
 import MenuMobile from "./components/MenuMobile";
 
@@ -36,9 +37,9 @@ export default function App() {
       <div className="content">
         <Header onOpenCall={onOpenCall} onOpenMenuMobile={onOpenMenuMobile} />
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          {/* <Route path="/catalog" element={<Catalog />} /> */}
-          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/contacts" element={<Contacts />} />
         </Routes>
       </div>
 

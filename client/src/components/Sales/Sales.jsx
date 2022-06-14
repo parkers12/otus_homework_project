@@ -6,7 +6,8 @@ import Item from "../Item";
 const itemsData = [
   {
     id: 1,
-    picture: "/img/1.jpg",
+    picture: "1.jpg",
+    // picture: "img1",
     article: 1,
     name: "Кольцо Diana с жемчугом высшего класса",
     // eslint-disable-next-line max-len
@@ -17,7 +18,8 @@ const itemsData = [
   },
   {
     id: 2,
-    picture: "/img/2.jpg",
+    picture: "2.jpg",
+    // picture: "img2",
     article: 2,
     name: "Тонкий браслет Classic из белого жемчуга 6-6,5 мм АА+",
     // eslint-disable-next-line max-len
@@ -28,7 +30,8 @@ const itemsData = [
   },
   {
     id: 3,
-    picture: "/img/3.jpg",
+    picture: "3.jpg",
+    // picture: "img3",
     article: 3,
     name: "Серьги-пусеты с белым жемчугом 9-9,5 мм",
     // eslint-disable-next-line max-len
@@ -42,7 +45,9 @@ const itemsData = [
 const itemElements = itemsData.map((item) => (
   <Item
     id={item.id}
-    picture={item.picture}
+    // picture={item.picture}
+    picture={`/img/${item.picture}`}
+    // picture={item.picture}
     article={item.article}
     name={item.name}
     desc={item.desc}

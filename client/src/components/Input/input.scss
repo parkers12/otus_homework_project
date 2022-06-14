@@ -41,7 +41,7 @@
 
   &__label {
     display: none;
-    margin-bottom: $sp / 2;
+    margin-bottom: calc($sp / 2);
     font-size: $middle-size;
     color: $grey;
     line-height: $line-height-normal;
@@ -51,7 +51,7 @@
   &__field {
     display: block;
     width: 100%;
-    padding: $sp $sp * 1.5;
+    padding: $sp calc($sp * 1.5);
     font-size: $small-size;
     line-height: $line-height-normal;
     letter-spacing: $letter-spacing-big;

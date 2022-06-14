@@ -51,7 +51,7 @@ type TSize = {
 export default function getCategory(req: any, res: any) {
   connection.query(
     `SELECT a.id, a.name, b.categoryrus, b.categoryeng, a.article, a.desc_short, a.desc_long, a.price, c.classrus, d.colorrus, e.formrus, f.metalrus, g.sortrus, a.size_start, a.size_finish, a.activ, a.new, a.hit, a.gift FROM lu__catalog a, lu__category b, lu__pearl_class c, lu__pearl_color d, lu__pearl_form e, lu__pearl_metal f, lu__pearl_sort g, lu__pearl_size h WHERE a.category = b.id AND a.class = c.id AND a.color = d.id AND a.form = e.id AND a.metal = f.id AND a.sort = g.id AND a.size = h.id AND a.id = ${req.params.idItem};` +
-      `SELECT id, data FROM lu__pearl_size_library`,
+    `SELECT id, data FROM lu__pearl_size_library`,
     (err, result: [TItem[], TSize[]]) => {
       if (err) {
         throw err;

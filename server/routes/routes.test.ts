@@ -10,7 +10,7 @@ import connection from "../model/db";
 // app.use(express.json());
 
 describe("Testing routes", () => {
-  let api: any;
+  let api: supertest.SuperTest<supertest.Test>;
 
   beforeEach(() => {
     api = supertest(app);

@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 import Socials from "../Socials";
 import Menu from "../Menu";
 import Phone from "../Phone";
 import Cart from "../Cart";
-import SearchIcon from "../../assets/icons/search.svg";
-import MenuIcon from "../../assets/icons/menu.svg";
-import LogoIcon from "../../assets/icons/logo.svg";
+import SearchIcon from "../../assets/images/icons/search.svg";
+import MenuIcon from "../../assets/images/icons/menu.svg";
+import LogoIcon from "../../assets/images/icons/logo.svg";
 import "./header.scss";
 
 // function Header(props) {

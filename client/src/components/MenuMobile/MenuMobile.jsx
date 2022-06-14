@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./menuMobile.scss";
 import Socials from "../Socials";
-import CloseIcon from "../../assets/icons/close.svg";
+import CloseIcon from "../../assets/images/icons/close.svg";
 import Copyright from "../Copyright";
 
 const MenuMobile = () => {

@@ -33,7 +33,7 @@
 
         li {
           position: relative;
-          padding: $sp / 2 0 $sp * 1.5 $sp * 3;
+          padding: calc($sp / 2) 0 calc($sp * 1.5) calc($sp * 3);
 
           a {
             color: $grey;
@@ -64,7 +64,7 @@
             padding: $sp 0;
 
             & > li {
-              padding: $sp / 2 0 $sp / 2 $sp * 3;
+              padding: calc($sp / 2) 0 calc($sp / 2) calc($sp * 3);
               & > a {
                 font-size: $middle-size;
               }

@@ -2,7 +2,7 @@ import React from "react";
 // import { ReactComponent as CartIcon } from "../../assets/icons/cart.svg";
 import "./cart.scss";
 
-import cart from "../../assets/icons/cart.svg";
+import cart from "../../assets/images/icons/cart.svg";
 
 function Cart() {
   return (

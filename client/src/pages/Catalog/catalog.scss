@@ -1,0 +1,35 @@
+@import "../../styles/variables.scss";
+
+.catalog {
+
+}
+@media (min-width: $ipad) {
+}
+
+@media (min-width: $desctop) {
+    .catalog {
+        width: $width-site;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__item {
+            border: 1px solid darken($white, 10%);
+            margin-left: $sp * 2;
+            transition: $transition;
+
+            &:nth-child(4n+1) {
+                margin-left: 0;
+            }
+
+            &:nth-child(n+5) {
+                margin-top: $sp * 2;
+            }
+
+            &:hover {
+                border: 1px solid darken($white, 30%);
+            }
+        }
+    }
+}

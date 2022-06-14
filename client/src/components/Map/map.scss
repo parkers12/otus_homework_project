@@ -12,7 +12,7 @@
 
   &__contacts {
     width: 100%;
-    padding: $sp * 4 $sp * 2 $sp * 5;
+    padding: calc($sp * 4) calc($sp * 2) calc($sp * 5);
 
     &-list {
       display: flex;
@@ -22,7 +22,7 @@
         font-size: $middle-size;
         letter-spacing: $letter-spacing-big;
         color: $grey;
-        padding-left: $sp * 3.5;
+        padding-left: calc($sp * 3.5);
         position: relative;
 
         &::before {
@@ -36,7 +36,7 @@
         }
 
         & + & {
-          margin-top: $sp * 2;
+          margin-top: calc($sp * 2);
         }
 
         &_phone {
@@ -82,7 +82,7 @@
       background-color: $white;
       padding: $sp * 4 $sp * 3;
       box-shadow: rgba(0, 0, 0, 0.3) 0 1px 4px -1px;
-      border-radius: $border-radius / 2;
+      border-radius: calc($border-radius / 2);
 
       &-list {
         &-item {

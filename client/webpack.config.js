@@ -8,10 +8,10 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, "./src/index.js"),
+    main: path.resolve(__dirname, "src/index.js"),
   },
   output: {
-    filename: "./js/bundle.js",
+    filename: "js/bundle.js",
     path: path.resolve(__dirname, "build"),
     clean: true,
     environment: {
@@ -28,25 +28,37 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
         title: 'Development',
-        template: path.join(__dirname, "./public/index.html"),
+        template: path.join(__dirname, "public/index.html"),
         publicPath: '/',
       }),
     new MiniCssExtractPlugin({
-      filename: "./styles/styles.css",
+      filename: "styles/styles.css",
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: "src/assets/icons",
-          to: "icons"
+          from: "src/assets/images/icons",
+          to: "images/icons"
+        },
+        {
+          from: "src/assets/images/catalog",
+          to: "images/catalog"
+        },
+        {
+          from: "src/assets/images/slider",
+          to: "images/slider"
+        },
+        {
+          from: "src/assets/images/categories",
+          to: "images/categories"
+        },
+        {
+          from: "src/assets/images/recources",
+          to: "images/recources"
         },
         {
           from: "src/assets/fonts",
           to: "fonts"
-        },
-        {
-          from: "src/assets/img",
-          to: "img"
         },
       ],
     }),
@@ -113,14 +125,14 @@ module.exports = {
         test: /\.svg/,
         type: "asset/resource",
         generator: {
-          filename: "icons/[name][ext]"
+          filename: "images/icons/[name][ext]"
         }
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: "asset/resource",
         generator: {
-          filename: "img/[name][ext][query]",
+          filename: "images/img/[name][ext][query]",
         },
       },
       {
@@ -145,7 +157,7 @@ module.exports = {
     historyApiFallback: true,
     proxy: {
       "/api": {
-        target: "http://localhost:3000",
+        target: "http://localhost:4000",
       },
     },
   },

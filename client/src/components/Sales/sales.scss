@@ -36,7 +36,7 @@
           }
 
           & + & {
-            margin-left: $sp / 2;
+            margin-left: calc($sp / 2);
           }
         }
       }
@@ -45,7 +45,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: $sp * 1.5;
+        margin-top: calc($sp * 1.5);
 
         &-item {
           font-weight: $font-weight-light;
@@ -84,7 +84,7 @@
 
           &-item {
             & + & {
-              margin-left: $sp * 3.5;
+              margin-left: calc($sp * 3.5);
             }
           }
         }
@@ -98,7 +98,7 @@
     width: $width-site;
     margin: 0 auto;
     background-size: 100%;
-    padding: $sp * 5 $sp * 2 $sp * 6;
+    padding: calc($sp * 5) calc($sp * 2) calc($sp * 6);
 
     &__list {
       width: 100%;

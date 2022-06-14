@@ -8,6 +8,7 @@
     "lint": "eslint . && prettier --check .",
     "lint:fix": "eslint . --fix && prettier --write .",
     "start:server": "ts-node ./server.ts",
+    "start:limit": "node -r ts-node/register --max-old-space-size=256 ./server.ts ",
     "start:dev": "nodemon --watch ./server.ts -e ts"
   },
   "author": "Parker",

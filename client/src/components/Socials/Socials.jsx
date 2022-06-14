@@ -29,7 +29,7 @@ const Socials = ({ size }) => {
     return (
       <div className={classes}>
         {list.map(item => {
-          const imgUrl = `/icons/${item.name}.svg`;
+          const imgUrl = `/images/icons/${item.name}.svg`;
           return (
             <a href={item.link}>
               <img src={imgUrl} className={item.class} />
