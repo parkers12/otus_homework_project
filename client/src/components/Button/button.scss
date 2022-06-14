@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+
+.button {
+  border-radius: $border-radius;
+  font-weight: $font-weight-bold;
+  font-size: $small-size;
+  letter-spacing: $letter-spacing-big;
+  line-height: $line-height-normal;
+  outline: none;
+  padding: $sp $sp * 3;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &_coral {
+    background: $coral;
+    color: $white;
+    border: 1px solid $coral;
+
+    &:hover {
+      background: darken($coral, 5%);
+    }
+
+    &:active {
+      background: darken($coral, 10%);
+    }
+  }
+
+  &_white {
+    background: darken($white, 5%);
+    color: $grey;
+    border: 1px solid darken($white, 5%);
+
+    &:hover {
+      background: darken($white, 5%);
+    }
+
+    &:active {
+      background: darken($white, 10%);
+    }
+  }
+
+  @media (min-width: 768px) {
+    font-size: $main-size;
+    padding: $sp * 1.5 $sp * 5;
+  }
+}

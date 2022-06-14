@@ -1,0 +1,96 @@
+@import "../../styles/variables.scss";
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.2);
+  }
+
+  &__container {
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: initial;
+    min-height: 100%;
+    width: 100%;
+    background-color: $white;
+  }
+
+  &__header {
+    padding: $sp * 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-close {
+      fill: $grey;
+      width: $size-icon-normal;
+      height: $size-icon-normal;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        fill: $black;
+      }
+    }
+  }
+
+  &__body {
+    min-height: calc(100vh - 127px);
+    padding: $sp * 2;
+
+    &-item {
+      margin-bottom: $sp * 1.5;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $sp * 2;
+  }
+
+  &_small {
+    .modal__container {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: $ipad) {
+  .modal {
+    &__container {
+      top: 50%;
+      left: 50%;
+      min-height: initial;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background-color: $white;
+    }
+
+    &__body {
+      min-height: calc(100% - 136px);
+      padding: $sp * 2;
+    }
+
+    &_small {
+      .modal__container {
+        width: 500px;
+      }
+    }
+  }
+}
+
+@media (min-width: $desctop) {
+  .modal {
+  }
+}

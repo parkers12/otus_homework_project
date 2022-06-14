@@ -1,0 +1,108 @@
+// @import "../../styles/styles";
+@import "../../styles/variables.scss";
+
+// $files: "assets";
+// $path-img-icons: "#{$files}/icons";
+
+.sales {
+  width: 100%;
+  padding: $sp * 4 $sp * 2 $sp * 5 $sp * 2;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+
+    &-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-arrows {
+        display: flex;
+        align-items: center;
+
+        .arrow {
+          width: $size-icon-normal;
+          height: $size-icon-normal;
+          background-repeat: no-repeat;
+
+          &_left {
+            background-image: url("../../#{$path-img-icons}/arrow-left.svg");
+          }
+          &_right {
+            background-image: url("../../#{$path-img-icons}/arrow-right.svg");
+          }
+
+          & + & {
+            margin-left: calc($sp / 2);
+          }
+        }
+      }
+
+      &-filter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: calc($sp * 1.5);
+
+        &-item {
+          font-weight: $font-weight-light;
+          font-size: $small-size;
+          letter-spacing: $letter-spacing-big;
+          line-height: $line-height-normal;
+          text-transform: lowercase;
+          color: $grey;
+
+          &.active {
+            color: $coral;
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+  }
+}
+
+@media (min-width: $ipad) {
+  .sales {
+    padding: $sp * 4;
+
+    &__header {
+      position: relative;
+
+      &-block {
+        &-filter {
+          margin-top: 0;
+          position: absolute;
+          top: 50%;
+          right: 84px;
+          transform: translateY(-50%);
+
+          &-item {
+            & + & {
+              margin-left: calc($sp * 3.5);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $desctop) {
+  .sales {
+    width: $width-site;
+    margin: 0 auto;
+    background-size: 100%;
+    padding: calc($sp * 5) calc($sp * 2) calc($sp * 6);
+
+    &__list {
+      width: 100%;
+      display: flex;
+    }
+  }
+}

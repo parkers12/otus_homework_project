@@ -1,0 +1,123 @@
+@import "../../styles/variables.scss";
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+
+  &__block {
+    display: flex;
+  }
+
+  &__prepend {
+    display: none;
+
+    &-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      font-size: $small-size;
+      font-weight: $font-weight-light;
+      line-height: $line-height-normal;
+      color: $grey;
+      text-align: center;
+      white-space: nowrap;
+      background-color: darken($white, 5%);
+      border: 1px solid #ced4da;
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      margin-bottom: 0;
+      margin-right: -1px;
+      width: 36px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: $size-icon-normal;
+    }
+  }
+
+  &__label {
+    display: none;
+    margin-bottom: calc($sp / 2);
+    font-size: $middle-size;
+    color: $grey;
+    line-height: $line-height-normal;
+    letter-spacing: $letter-spacing-big;
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    padding: $sp calc($sp * 1.5);
+    font-size: $small-size;
+    line-height: $line-height-normal;
+    letter-spacing: $letter-spacing-big;
+    color: $grey;
+    background-color: $white;
+    background-clip: padding-box;
+    border: 1px solid darken($white, 15%);
+    border-radius: $border-radius;
+    outline: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:focus {
+      border: 1px solid $grey;
+    }
+
+    &:active {
+      border: 1px solid $grey;
+    }
+  }
+
+  &_label {
+    .input-group__label {
+      display: inline-block;
+    }
+  }
+
+  &_prepend {
+    .input-group {
+      &__prepend {
+        display: flex;
+      }
+
+      &__field {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  &_phone {
+    .input-group {
+      &__prepend {
+        &-text {
+          background-image: url("../../#{$path-img-icons}/phone.svg");
+        }
+      }
+    }
+  }
+
+  &_user {
+    .input-group {
+      &__prepend {
+        &-text {
+          background-image: url("../../#{$path-img-icons}/person.svg");
+        }
+      }
+    }
+  }
+
+  &_clock {
+    .input-group {
+      &__prepend {
+        &-text {
+          background-image: url("../../#{$path-img-icons}/clock.svg");
+        }
+      }
+    }
+  }
+}
